@@ -1,11 +1,11 @@
-// pages/leftRight/index.js
+// pages/parallelShop/generate/generate.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    receive:"1000",
   },
 
   /**

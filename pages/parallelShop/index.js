@@ -1,66 +1,24 @@
-// pages/parallelShop/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+    imgUrls: [
+      '../../images/199.jpg',
+      '../../images/makers.jpg',
+      '../../images/pingxingdian.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 1000, 
+    circular: true,
+    iconGroup: [
+      { img: '../../images/allocated.png', text:'待领配'}, 
+      { img: '../../images/assign.png', text: '已领配'}, 
+      { img: '../../images/evaluated.png', text: '待评价'}, 
+    ],
+    parallel: [
+      { img: '../../images/capital-1.jpg', title: '科技奶茶',busin:'超市',addr:'深圳市南山区TCL国际E城'},
+      { img: '../../images/capital-1.jpg', title: '北京汇雅美苑文化创意发展有限公司', busin: '超市', addr: '深圳市南山区TCL国际E城' },
+      { img: '../../images/capital-1.jpg', title: '北京红日升商贸有限公司', busin: '超市', addr: '深圳市南山区TCL国际E城' },
+    ],
+  }, 
 })
