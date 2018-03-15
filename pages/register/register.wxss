@@ -1,0 +1,18 @@
+/* pages/register/register.wxss */
+
+.registerBlockMargin {
+   margin-top: 50rpx; 
+}
+
+.registerBlockBtn, .registerBlockBtn>button {
+  background-color: #ad0e11;
+  color: #fff;
+}
+
+.registerBlockBtn, .registerBlockBtn>button {
+  background-color: #999;
+}
+
+.weui-vcode-btn, .weui-vcode-btn:hover {
+  color: #cc6862;
+}
