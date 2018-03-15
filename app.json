@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/parallelShop/index",
+    "pages/leftRight/index",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -8,5 +10,17 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/parallelShop/index",
+        "text": "平行店"
+      },
+      {
+        "pagePath": "pages/leftRight/index",
+        "text": "左右店"
+      }
+    ]
   }
 }
