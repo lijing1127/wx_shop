@@ -1,0 +1,11 @@
+<!--pages/parallelShop/waitReceive/waitReceive.wxml 待领配 -->
+<view>
+    <view class="weui-cells__title">待领配订单</view>
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="../receiveDetail/receiveDetail?id={{ item.id }}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ orderData }}" wx:key="{{ index }}">
+            <view class="weui-cell__bd">叫号码：{{ item.number }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">顾客名：{{ item.name }}</view>
+        </navigator>
+
+    </view>
+</view>
