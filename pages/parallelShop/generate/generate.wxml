@@ -1,0 +1,19 @@
+
+
+<view class='contain'>
+
+  <!-- 输入金额 -->
+  <view class='inputMoney'>
+    <text>输入用户实际消费金额:</text>
+    <view class='trueInput'>
+      <input placeholder="用户实际消费金额" focus adjust-position="{{true}}"/>
+      <button plain='true'> 确认生成 </button>
+    </view>
+  </view>
+
+  <!-- 确认后展示二维码 -->
+  <view>
+  
+  </view>
+
+</view>

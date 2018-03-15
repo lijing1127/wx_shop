@@ -1,32 +1,18 @@
-// pages/parallelShop/shopEdition/shopEdition.js
+// pages/register/register.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '../../../images/pingxingdian.jpg',
-      '../../../images/makers.jpg',
-      '../../../images/199.jpg'
-    ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 3000,
-    duration: 500,
-    circular:true,
-    shopIconBtn: [
-      { icon: "../../../images/pingxingdian.png", text: "待领配", navUrl:"../generate/generate" },
-      { icon: "../../../images/pingxingdian.png", text: "生成领配码", navUrl:"../generate/generate" },
-      { icon: "../../../images/pingxingdian.png", text: "全部订单", navUrl:"../generate/generate" },
-    ]
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
