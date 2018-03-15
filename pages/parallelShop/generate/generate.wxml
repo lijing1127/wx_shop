@@ -12,8 +12,9 @@
   </view>
 
   <!-- 确认后展示二维码 -->
-  <view>
-  
+  <view class='showCode'>
+    <view class='showMoney'>您的领配金额为：<text>{{receive}}</text>元</view>
+    <view class="confirmMoney">请确认后扫码</view>
   </view>
 
 </view>
