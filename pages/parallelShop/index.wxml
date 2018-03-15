@@ -28,7 +28,7 @@
   <view>
     <view class="weuiTitle weui-panel__hd">推荐平行店</view>
     <view class="weui-panel__bd" wx:for="{{parallel}}">
-      <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="./shopDetail/shopDetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" src="{{item.img}}" />
         </view>
