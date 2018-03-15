@@ -1,0 +1,30 @@
+
+
+<view>
+
+  <!-- headSearch -->
+  <view class='headSearch'>
+      <input placeholder="搜索" focus/>
+      <button plain='true'> 用户版 </button>
+  </view>
+
+  <!-- banner -->
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" 
+    indicator-dots="{{indicatorDots}}">
+    <view wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </view>
+  </swiper>
+
+  <!-- iconBtn -->
+  <view class="weui-grids">
+    <navigator class="weui-grid" url="" wx:for="{{shopIconBtn}}" wx:key="{{index}}">
+      <image class="weui-grid__icon" src="{{item.icon}}"></image>
+      <view class="weui-grid__label">{{item.text}}</view>
+    </navigator>
+  </view>
+
+</view>
