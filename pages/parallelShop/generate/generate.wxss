@@ -1,0 +1,39 @@
+/* pages/parallelShop/generate/generate.wxss */
+
+.contain {
+  padding:20rpx 20rpx 0;
+}
+
+.inputMoney {
+  margin-top: 30rpx;
+}
+
+.inputMoney text{
+  font-size: 32rpx;
+  color:#ad0e11;
+  display: block;
+  padding:10rpx 0;
+}
+
+.trueInput {
+  display: flex;
+  justify-content: space-between;
+  height:80rpx;
+  margin-top: 16rpx;
+}
+
+.trueInput input {
+  flex: 1;
+  height:80rpx;
+  padding-left: 15rpx;
+  background-color: #eee;
+  border-radius: 10rpx;
+}
+
+.trueInput button {
+  height:80rpx;
+  line-height: 80rpx;
+  background: #ad0e11;
+  border:0;
+  color: #fff;
+}

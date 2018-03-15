@@ -35,6 +35,7 @@
 
 .weui-grids {
   margin-top: 30rpx;
+  display: flex;
 }
 
 .weui-grids, .weui-grid {

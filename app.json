@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/parallelShop/shopEdition/shopEdition",
+    "pages/parallelShop/generate/generate",
     "pages/register/register",
     "pages/parallelShop/index",
     "pages/leftRight/index",
@@ -8,9 +10,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ad0e11",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
     "list": [
