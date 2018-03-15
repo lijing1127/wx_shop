@@ -16,10 +16,14 @@
   text-align: right;
   line-height:2.55555556;
   color: #fff;
-  bottom: 90rpx;
+  bottom: 0rpx;
   background-color: #ad0e11;
 }
 
 .receiveDetailBlockBtn text {
   margin-right: 64rpx;
+}
+
+.receiveDetailList {
+  margin-bottom: 84rpx;
 }

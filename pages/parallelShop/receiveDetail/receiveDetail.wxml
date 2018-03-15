@@ -3,7 +3,7 @@
   <view class='receiveDetailBlock'>
     <image src='../../../images/capital-1.jpg' />
   </view>
-  <view class="weui-panel weui-panel_access">
+  <view class="weui-panel weui-panel_access receiveDetailList">
       <view class="weui-panel__hd">已选产品列表</view>
       <view class="weui-panel__bd">
           <navigator url="#" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ productList }}" wx:key="{{ index }}">
