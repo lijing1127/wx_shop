@@ -1,0 +1,25 @@
+/* pages/parallelShop/receiveDetail/receiveDetail.wxss */
+.receiveDetailBlock {
+  text-align: center;
+  margin: 30rpx 0;
+}
+
+.receiveDetailBlock>image {
+  width: 490rpx;
+  height: 490rpx;
+  margin-top: 10rpx;
+}
+
+.receiveDetailBlockBtn {
+  position: fixed;
+  width: 100%;
+  text-align: right;
+  line-height:2.55555556;
+  color: #fff;
+  bottom: 90rpx;
+  background-color: #ad0e11;
+}
+
+.receiveDetailBlockBtn text {
+  margin-right: 64rpx;
+}

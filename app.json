@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/parallelShop/waitReceive/waitReceive",
+    "pages/parallelShop/receiveDetail/receiveDetail",
     "pages/register/register",
     "pages/parallelShop/index",
     "pages/leftRight/index",
