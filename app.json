@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/register/register",
     "pages/parallelShop/index",
     "pages/leftRight/index",
     "pages/index/index",
