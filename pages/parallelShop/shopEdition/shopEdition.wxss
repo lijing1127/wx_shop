@@ -1,30 +1,36 @@
 /* pages/parallelShop/shopEdition/shopEdition.wxss */
 @import '../../../style/weui.wxss';
-.headSearch {
+/* 头部搜索框 */
+.headSearch{
   height:80rpx;
-  width:100%;
-  background-color: #ad0e11;
   display: flex;
-  justify-content: space-around;
-  padding:0 10rpx;
-  align-items:center;
+  background: #ad0e11;
 }
-
-.headSearch input {
-  width:80%;
-  background: #f8f8f8;
+.headSearch input{
+  flex:1;
+  height:52rpx;
+  margin: 14rpx 0 0 2%;
+  padding-left: 3%;
+  border:0;
+  background: #fff;
   border-radius: 10rpx;
   --webkit-appearance: none;
-  height:52rpx;
-  padding: 0 10rpx;
+  font-size: 24rpx;
+}
+.headSearch navigator{
+  display: inline-block;
+  margin-top: 12rpx;
+  
 }
 
-.headSearch button {
-  background: #ad0e11;
+.headSearch navigator button {
+  padding:0 2%;
+  margin:0 4% 0 1%;
+  height:52rpx;
+  line-height: 52rpx;
   border:0;
-  height:80rpx;
-  line-height: 80rpx;
   color: #fff; 
+  background: transparent;
   font-size: 28rpx;
 }
 

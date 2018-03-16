@@ -1,9 +1,10 @@
-
 <view>
   <!-- 头部搜索框 -->
-  <view class="headSearch">
+   <view class="headSearch">
     <input placeholder="搜索"/>
-    <button plain="true">平行店版</button>
+    <navigator url="./shopEdition/shopEdition">
+        <button plain="true">平行店版</button>
+    </navigator> 
   </view> 
   <!-- 轮播图 -->
   <swiper indicator-dots="{{indicatorDots}}"autoplay="{{autoplay}}" interval="{{interval}}" 
@@ -18,7 +19,7 @@
   <!-- 图标按钮 -->
   <view class="weui-grids" >
     <block wx:for="{{iconGroup}}"wx:key="*this">
-      <navigator class="weui-grid" hover-class="weui-grid_active" url="">
+      <navigator class="weui-grid" hover-class="weui-grid_active" url="{{item.url}}">
         <image class="weui-grid__icon" src="{{item.img}}" /> 
         <view class="weui-grid__label">{{item.text}}</view>
       </navigator> 
@@ -29,7 +30,7 @@
   <view>
     <view class="weuiTitle weui-panel__hd">推荐平行店</view>
     <view class="weui-panel__bd" wx:for="{{parallel}}">
-      <navigator url="./shopDetail/shopDetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="{{item.url}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" src="{{item.img}}" />
         </view>
@@ -41,5 +42,5 @@
       </navigator>
     </view>
   </view>
-  
+   
 </view>
