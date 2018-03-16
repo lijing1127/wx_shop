@@ -5,7 +5,9 @@
   <!-- headSearch -->
   <view class='headSearch'>
       <input placeholder="搜索" focus/>
-      <button plain='true'> 用户版 </button>
+      <navigator open-type="navigateBack" url="../shopDetail/shopDetail">
+        <button plain="true">用户版</button>
+    </navigator> 
   </view>
 
   <!-- banner -->
