@@ -1,11 +1,15 @@
-// pages/parallelShop/generate/generate.js
+// pages/parallelShop/waitReceive/waitReceive.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    receive:"1000",
+    orderData: [
+      { id: "01", number: "0015", name: "张三" },
+      { id: "02", number: "0016", name: "李四" },
+      { id: "03", number: "0017", name: "王五" }
+    ],
   },
 
   /**

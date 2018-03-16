@@ -1,10 +1,13 @@
 {
   "pages":[
+    "pages/parallelShop/index",
+    "pages/leftRight/index",
+    "pages/parallelShop/shopDetail/shopDetail",
+    "pages/parallelShop/waitReceive/waitReceive",
+    "pages/parallelShop/receiveDetail/receiveDetail",
     "pages/parallelShop/shopEdition/shopEdition",
     "pages/parallelShop/generate/generate",
     "pages/register/register",
-    "pages/parallelShop/index",
-    "pages/leftRight/index",
     "pages/index/index",
     "pages/logs/logs"
   ],

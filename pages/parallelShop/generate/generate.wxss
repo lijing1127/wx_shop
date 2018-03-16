@@ -37,3 +37,20 @@
   border:0;
   color: #fff;
 }
+
+.showCode {
+  margin: 60rpx 0 0 10%;
+  width:80%;
+  border-top:1px dashed #ad0e11;
+}
+
+.showCode .showMoney, .showCode .confirmMoney{
+  display: flex;
+  justify-content: center;
+  padding:16rpx;
+}
+
+.showCode .showMoney text {
+  color: #ad0e11;
+  font-weight: bolder;
+}

@@ -11,7 +11,7 @@ Page({
     duration: 1000, 
     circular: true,
     iconGroup: [
-      { img: '../../images/allocated.png', text:'待领配'}, 
+      { img: '../../images/allocated.png', text:'待领配', url: "./waitReceive/waitReceive"}, 
       { img: '../../images/assign.png', text: '已领配'}, 
       { img: '../../images/evaluated.png', text: '待评价'}, 
     ],

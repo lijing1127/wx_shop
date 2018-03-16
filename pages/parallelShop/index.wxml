@@ -1,6 +1,7 @@
+
 <view>
   <!-- 头部搜索框 -->
-   <view class="headSearch">
+  <view class="headSearch">
     <input placeholder="搜索"/>
     <button plain="true">平行店版</button>
   </view> 
@@ -40,5 +41,5 @@
       </navigator>
     </view>
   </view>
-   
+  
 </view>
