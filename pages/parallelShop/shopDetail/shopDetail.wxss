@@ -1,0 +1,71 @@
+.weui-media-box__hd_in-appmsg{
+  width: 180rpx;
+}
+.weui-media-box__title{
+  font-size: 30rpx;
+}
+.weui-media-box__desc{
+  line-height: 38rpx;
+}
+.weuiTitle{
+  font-size:36rpx;
+  color: #ad0e11;
+  padding: 16rpx 30rpx;
+}
+
+.background{
+  background: #d9d9d9;
+}
+.productList{
+  display: inline-block;
+  width: 49%;
+  margin: 0 4rpx 4rpx 0;
+  background: #fff;
+  padding-bottom: 18rpx;
+}
+.productList image{
+  width: 380rpx;  
+  height: 380rpx;
+}
+.productList .intro{
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.gw_num {
+    border: 1px solid #dbdbdb;
+    width: 110px;
+    line-height: 26px;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .gw_num em {
+    display: block;
+    height: 26px;
+    width: 26px;
+    float: left;
+    color: #7A7979;
+    border-right: 1px solid #dbdbdb;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .gw_num .num {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 56px;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 26px;
+    border: 0;
+  }
+
+  .gw_num em.add {
+    float: right;
+    border-right: 0;
+    border-left: 1px solid #dbdbdb;
+  }

@@ -1,0 +1,32 @@
+<view>
+  <!-- 店铺信息 -->
+  <view class="weui-panel__bd" wx:for="{{shopData}}">
+    <navigator url="./shopDetail/shopDetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="{{item.img}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{item.title}}</view>
+        <view class="weui-media-box__desc">主营：{{item.busin}}</view>
+        <view class="weui-media-box__desc">{{item.addr}}</view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="weuiTitle weui-panel__hd">领配产品</view>
+  <view class="background">
+    <view wx:for="{{shopProduct}}" class="productList">
+      <view>
+        <image src="{{item.img}}"/>
+        <view class="intro">{{item.name}}</view>
+        <view class="intro">{{item.price}}</view>
+        <view class="gw_num">
+          <em class="jian">-</em>
+          <input type="text" value="0" disabled class="num"/>
+          <em class="add">+</em>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

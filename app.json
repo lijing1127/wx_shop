@@ -2,6 +2,7 @@
   "pages":[
     "pages/parallelShop/index",
     "pages/leftRight/index",
+    "pages/parallelShop/shopDetail/shopDetail",
     "pages/parallelShop/waitReceive/waitReceive",
     "pages/parallelShop/receiveDetail/receiveDetail",
     "pages/parallelShop/shopEdition/shopEdition",
