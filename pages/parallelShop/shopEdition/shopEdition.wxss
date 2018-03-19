@@ -19,13 +19,10 @@
 }
 .headSearch navigator{
   display: inline-block;
-  margin-top: 12rpx;
-  
+  margin-top: 12rpx;  
 }
 
 .headSearch navigator button {
-  padding:0 2%;
-  margin:0 4% 0 1%;
   height:52rpx;
   line-height: 52rpx;
   border:0;
