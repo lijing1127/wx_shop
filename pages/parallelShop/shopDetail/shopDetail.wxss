@@ -13,19 +13,22 @@
   padding: 16rpx 30rpx;
 }
 
+
+/* 产品列表 */
 .background{
   background: #d9d9d9;
 }
 .productList{
   display: inline-block;
-  width: 49%;
-  margin: 0 4rpx 4rpx 0;
+  width: 48.5%;
+  margin:0 0 1% 1%;
   background: #fff;
   padding-bottom: 18rpx;
 }
 .productList image{
-  width: 380rpx;  
-  height: 380rpx;
+  width: 300rpx;  
+  height: 300rpx;
+  text-align: center
 }
 .productList .intro{
   text-align: center;
@@ -33,34 +36,40 @@
   color: #333;
 }
 
+/* 选择框 */
 .gw_num {
     border: 1px solid #dbdbdb;
-    width: 110px;
-    line-height: 26px;
+    width: 220rpx;
+    line-height: 52rpx;
     overflow: hidden;
     margin: 0 auto;
     text-align: center;
   }
 
-  .gw_num em {
+  .cut,.add {
     display: block;
-    height: 26px;
-    width: 26px;
+    height: 52rpx;
+    width: 52rpx;
     float: left;
     color: #7A7979;
-    border-right: 1px solid #dbdbdb;
     text-align: center;
     cursor: pointer;
+  }
+  .cut1{
+    border-right: 1px solid #dbdbdb;
+  }
+  .add1{
+    border-left: 1px solid #dbdbdb;  
   }
 
   .gw_num .num {
     display: block;
     float: left;
     text-align: center;
-    width: 56px;
+    width: 112rpx;
     font-style: normal;
-    font-size: 14px;
-    line-height: 26px;
+    font-size: 24rpx;
+    line-height: 52rpx;
     border: 0;
   }
 
@@ -68,4 +77,42 @@
     float: right;
     border-right: 0;
     border-left: 1px solid #dbdbdb;
+  }
+
+  .parallelColler{
+    border:0;
+    border-radius: 0;
+    color: #fff; 
+    background: #ad0e11;
+    font-size: 32rpx;
+  }
+  .hidden{
+    display: none;
+  }
+
+  .weui-cell__bd{
+    font-size: 36rpx;
+  }
+
+  .containView{
+    position: relative;
+  }
+  .proDetail{
+    background: #fff;
+    box-shadow: 5px 5px 5px #ddd;
+    border-top: 3px solid #ad0e11;
+    border-radius: 10rpx;
+    padding: 60rpx 2% 30rpx;
+    width: 60%;
+    position: absolute;
+    left: 18%;
+    bottom: 50%;
+    font-size: 28rpx;
+  }
+
+  .proDetail button{
+    border: 0;
+    margin-top: 20rpx;
+    color: #ad0e11;
+    font-size: 32rpx;
   }

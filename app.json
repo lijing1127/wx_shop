@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/parallelShop/index",
+    "pages/parallelShop/index/index",
     "pages/leftRight/index",
     "pages/parallelShop/shopDetail/shopDetail",
     "pages/parallelShop/waitReceive/waitReceive",
@@ -20,7 +20,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/parallelShop/index",
+        "pagePath": "pages/parallelShop/index/index",
         "text": "平行店"
       },
       {
