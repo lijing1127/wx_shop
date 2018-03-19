@@ -1,6 +1,6 @@
-<view>
+<view class="containView">
   <!-- 店铺信息 -->
-  <view class="weui-panel__bd" wx:for="{{shopData}}">
+  <view class="weui-panel__bd" wx:for="{{shopData}}"  wx:key="{{index}}">
     <navigator url="./shopDetail/shopDetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
       <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
         <image class="weui-media-box__thumb" src="{{item.img}}" />
@@ -12,20 +12,35 @@
       </view>
     </navigator>
   </view>
-
+<!-- 领配产品 -->
   <view class="weuiTitle weui-panel__hd">领配产品</view>
   <view class="background">
-    <view wx:for="{{shopProduct}}" class="productList">
+    <view wx:for="{{shopProduct}}"  wx:key="{{index}}" class="productList">
       <view>
-        <image src="{{item.img}}"/>
+        <image src="{{item.img}}" mode="aspectFit" bindtap="showDetail"/>
         <view class="intro">{{item.name}}</view>
         <view class="intro">{{item.price}}</view>
         <view class="gw_num">
-          <em class="jian">-</em>
-          <input type="text" value="0" disabled class="num"/>
-          <em class="add">+</em>
+          <text class="cut cut1" bindtap="cutClick" data-index="{{index}}">-</text>
+          <text class="num">{{item.num}}</text>
+          <text class="add add1" bindtap="addClick" data-index="{{index}}">+</text>
         </view>
       </view>
+    </view>
+  </view>
+
+  <!-- 产品详情 -->
+  <view class="proDetail " wx:if="{{showModal}}">
+    <view>规格：20ml*20支/盒</view>
+    <view>包装：20ml*20支/盒</view>
+    <view>简介：调血糖 优化肠道菌群 活力肠道 排毒养颜 降血压</view>
+    <button plain='true' bindtap='hideDetail'>关闭</button>
+  </view>
+
+  <view class="bottomPosition">
+    <view url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">总价：{{totalPrice}}</view>
+        <button class="parallelColler">平行领配</button>
     </view>
   </view>
 
