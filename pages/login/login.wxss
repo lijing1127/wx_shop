@@ -1,0 +1,29 @@
+/* pages/login/login.wxss */
+
+.loginView {
+  padding:0 40rpx;
+  height:100vh;
+  background: #ad0e11;
+}
+
+.loginTit {
+  color:#fff;
+  font-size: 40rpx;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  padding: 90rpx 0 40rpx;
+}
+
+.weui-cells {
+  margin-bottom: 150rpx;
+}
+
+.loginBlockBtn, .loginBlockBtn>button {
+  background-color: #fff;
+  color: #ad0e11;
+}
+
+.loginBlockBtn, .loginBlockBtn>button {
+  background-color: #ccc;
+}

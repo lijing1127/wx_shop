@@ -9,7 +9,7 @@
     "pages/parallelShop/generate/generate",
     "pages/register/register",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",
