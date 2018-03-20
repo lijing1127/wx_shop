@@ -40,7 +40,7 @@
   <view class="bottomPosition">
     <view url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__bd">总价：{{totalPrice}}</view>
-        <button class="parallelColler">平行领配</button>
+      <button class="parallelColler" style="background:{{backgroundColor}}">{{showText}}</button>
     </view>
   </view>
 
