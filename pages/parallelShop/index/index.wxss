@@ -41,10 +41,10 @@
 .weui-grids, .weui-grid {
   border:0;
 }
-.weui-grid image{
+ /* .weui-grid image{
   width: 100rpx;
   height: 100rpx;
-}
+}  */
 
 /* 推荐平行店和图文列表 */
 .weuiTitle{

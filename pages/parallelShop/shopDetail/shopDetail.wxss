@@ -21,14 +21,18 @@
 .productList{
   display: inline-block;
   width: 48.5%;
-  margin:0 0 1% 1%;
+  /* margin:0 0 1% 1%; */
+  margin: 2px;
   background: #fff;
-  padding-bottom: 18rpx;
+   padding-bottom: 18rpx; 
+  justify-content: center;
 }
 .productList image{
   width: 300rpx;  
   height: 300rpx;
-  text-align: center
+  justify-content: center;
+  /* align-self: center;
+  text-align: center */
 }
 .productList .intro{
   text-align: center;
@@ -82,12 +86,20 @@
   .parallelColler{
     border:0;
     border-radius: 0;
-    color: #fff; 
-    background: #ad0e11;
+    color: #fff;
     font-size: 32rpx;
+  }
+  .clickable{
+    background: #ad0e11;
+  }
+  .disable{
+    background: #999;
   }
   .hidden{
     display: none;
+  }
+  .show{
+    display: block;
   }
 
   .weui-cell__bd{
