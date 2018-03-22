@@ -6,6 +6,7 @@ Page({
    */
   data: {
     receive:"1000",
+    rcode: '',
   },
 
   /**
@@ -62,5 +63,19 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  //用户点击‘确认生成’
+  setRcode: function() {
+    var that = this;
+    wx.request({
+      url: 'http://192.168.1.235:3000/code/get_rcode',
+      success: function(res) {
+        console.log(res.data);
+        that.setData({
+          rcode: res.data
+        })
+      }
+    })
   }
 })
