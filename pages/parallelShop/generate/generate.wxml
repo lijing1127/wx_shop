@@ -6,7 +6,7 @@
   <view class='inputMoney'>
     <text>输入用户实际消费金额:</text>
     <view class='trueInput'>
-      <input placeholder="用户实际消费金额" focus adjust-position="{{true}}"/>
+      <input placeholder="用户实际消费金额" focus adjust-position="{{true}}" bindinput='getPrice' />
       <button plain='true' bindtap='setRcode'> 确认生成 </button>
     </view>
   </view>
@@ -16,7 +16,7 @@
     <view class='showMoney'>您的领配金额为：<text>{{receive}}</text>元</view>
     <view class="confirmMoney">请确认后扫码</view>
     <view>
-      <image src='{{ rcode }}' />
+      <image class='showCode showCodeBorder' src='{{ rcode }}' />
     </view>
   </view>
 

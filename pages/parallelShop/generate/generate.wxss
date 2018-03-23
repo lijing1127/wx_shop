@@ -54,3 +54,7 @@
   color: #ad0e11;
   font-weight: bolder;
 }
+
+.showCodeBorder {
+  border:none;
+}

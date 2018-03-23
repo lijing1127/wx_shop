@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data: {
     imgUrls: [
@@ -25,6 +26,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(options)
   },
+
+  /*
+  * 用户验证相关
+  */
+
+  parallelBtn: function () {
+    //是否是管理员
+    if (app.globalData.has_parallel_shop) {
+      wx.navigateTo({
+        url: '/pages/parallelShop/shopEdition/shopEdition',
+      })
+    } else {
+      wx.showToast({
+        title: "您还没有平行店"
+      })
+    }
+  }
+
+
 })
