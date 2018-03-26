@@ -1,6 +1,11 @@
 
 
 <view class='contain'>
+  <!-- 扫一扫 -->
+  <view class='scanView' bindtap='tapScan'>
+    <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHhSURBVEhLzZU9S1xBFIbXzsJISguxEOM3YiFiIH4UFlYWFgqClqJgKxE7sdAmWAhKICmDnf4AsbKw0H8gKqbSP2F8nr13LnM/du2CLzzs3Jlz3p2dc+Zu7X9oCU7gZ8oP6IdGcs2YEH8MeuTkxCtcw0XKA7zAJwiahQ5wzjVjQry5eixCpt9wkwwzDcA/+Fp/SuTzMjjn2JhYt6BXpj9wlQzrn1vQBSZ/g3m4T581ds6xMesQ5+qVKTbehjmIjUfhIH0uGs+AOapkfAhPMATdKatg8ggEuWt375xrxoR4c/+CXpl6wWIYHHMGLVCUc64V459Br5zaYBL8glPw52vgDkLlA865ZswvMMdcPUqyjdbgCHbBs1QWMvSq3EGoh7Ie5pirR0lxQSyGZ16luNBBcaEbSsP9ZJjJ3ZtYpWabyEmT8WRYl0dxCRqH43BOuQGPbROc74GSvKZT4LWV94qnPJY9WADnhyGnPqhqt3OoardYTY/CHRQvyApo7mUIV7pKn8HiVSqu9AZMQ1zpYvE64Tu0wwSYU6nY2E+L08x4DPwFmu6Ar0x/ZSvk5KvOV16sQdDMV2Sjdgut2bCPq170j+Ddt1u8UXZKURrZYu7Udc+7JM39ewm96t/OF/hIqtXeAMFmj4Q6h7/WAAAAAElFTkSuQmCC"></image>
+    <text>扫一扫</text>
+  </view>
 
   <!-- 输入金额 -->
   <view class='inputMoney'>

@@ -4,6 +4,18 @@
   padding:20rpx 20rpx 0;
 }
 
+.scanView {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.scanView image {
+  width:36rpx;
+  height:36rpx;
+  margin-right: 8rpx
+}
+
 .inputMoney {
   margin-top: 30rpx;
 }
