@@ -2,8 +2,8 @@
   <!-- 头部搜索框 -->
    <view class="headSearch">
     <input placeholder="搜索"/>
-    <navigator url="../shopEdition/shopEdition">
-        <button plain="true">平行店版</button>
+    <navigator>
+        <button plain="true" bindtap='parallelBtn'>平行店版</button>
     </navigator> 
   </view> 
   <!-- 轮播图 -->
