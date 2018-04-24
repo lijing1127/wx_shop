@@ -1,21 +1,25 @@
 {
-  "pages":[
+  "pages": [
     "pages/parallelShop/index/index",
+    "pages/parallelShop/warehouseMana/warehouseMana",
+    "pages/parallelShop/stockOrder/stockOrder",
     "pages/leftRight/index",
     "pages/parallelShop/shopDetail/shopDetail",
     "pages/parallelShop/waitReceive/waitReceive",
     "pages/parallelShop/receiveDetail/receiveDetail",
     "pages/parallelShop/shopEdition/shopEdition",
+    "pages/parallelShop/shoppingMall/shoppingMall",
+    "pages/parallelShop/bill/bill",
     "pages/parallelShop/generate/generate",
     "pages/register/register",
     "pages/index/index",
     "pages/login/login"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ad0e11",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [

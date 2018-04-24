@@ -1,0 +1,112 @@
+<view class="contain">
+  <view class="instruct">
+    <text class="addstyle">扫码：</text>
+    <image class="scancode" src="../../../images/scancode.png" />
+    <text class="addstyle">手动添加：</text>
+    <image class="addManully" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASDSURBVGhD7VpLrxRFFG6iQa8zVV01RAxINL52oiSw8MkCE2P0B5ho2PoCrv9CxJvrki3rYboHUOEKIWELatxJQnCDXIw7RTDx6jX4fd2nq/tOepjq6R5mQuZLTjKp867nqeoJ5phjjnuPC0HwYKTUc1Hb7I21fYvUa5vXu1o/S56IzR7uBMEmBhppsxQp+wMCXwPdGUJrsbLfx9p80VP2FeqKmenhq23bHomVWUTwP5cE7EWprjnUDXYsiNl7B/ZipMx+jMCvZcGRIm3/RZLXIHOZxN9oXx+Uyyi1Zd4XF5NH3GptRVDflgSzjmDOIJgDccs+fzwINouKA9vIg9xBdMQKdQZsYITMSrfdflRUJoMTYbg77bmCc2Vucb6fXNiyXcS80V3oPA57S6mNgk1tVuFrl4g1C+5A6K0/NzhUJmIwIjI24k5nB9ZKPGD7Jn2KSDPoab0HO80fBUdrUWg/EHZjoE3adn7g80TL7BR2PZxqbX2sOJ04Kr0wfEPYjYO2iyMP3zdqrxnuThjis5lR0FochvuEPTHQR+LL+TWnhTUe0DP7c2PonQlMp2Hoa/vRBt/avCesauABBeXfnDEsbGF5o9+2rzF5En9LszdwFvXzZMzqWIcmRuPTQhK3xtmdoHe0YOOoNHvjuLVPQO+2s4EzSlh+SE/uYtlhjgirEuomQsD3cm7DXpVmP7AAzJRZaoxz2BFNJMKZAH1XAfSVfVlYo5GctqKIKbYizZXRRCIEYjhXsHNYmkcjLbNFseq8LKCpRBDDocwOkrokzXcHLz5Q+CdT7BnzgrAqo7FEjHnR2cH5guLzAWENB292mRLXR1kV64umEkmq5sI6icLwaWENB/d7p6DMdWkuBStUyHw+jDBFf8xs8XeZTEajql1Mr9XMlteZhJ57xznX5idpLgVP21y2Ho06ucG/7GSVfVuah+O+SeS+mVp8snHOscBmYbGfCYKHGEtmqxuGTwlrOGZx++VoOTu+2y+Bof4uV5yBA1GZxUI8F6V5NCB8JFNEUjNWotjPpHk0orZ91Slibk6zaOTDBPT/y+10XhLWaAyW8dj6loRVCU0kAt9fFuK4Is3+wPRyhRqCuM2eEZY36ibCixWm1V/OhjafCMsfctXNX09w7RSWN7jf17zqnnL+caYdC558WFjVgEQGT+4PhTVxwPfHRd9I6l1hVUfyHKTN6YLBqTwHIalvhDU++DiGZFx5gCGe7AOd7ryJ9eTeguHvl75SW4RdD3y2xP49+SdTbQ7StvPT5JNphuQzmjI3nRMQ5u1J7iwiMjaS3amwsBPbyv7ORxARaRZpzZNPs4SSdyezPM67V/pCYpY3brGJzWt1ajwvcM3AMT/S5I5TWkf7OQSxyCBYsYqKQ1LF8v7N2knZ89QZsMFR/rqxNeEDbs2gG4OBFIiJXYdM8umNv9k2IOMola2xxdYBDyhMjQPo3atlwfkQkrxCG2UjOBXwBRBT5jB69hICHPp5Gr3+NwK/SNlKr4bTAC8+fa2fkWtz8ocBVtRs874UzTHHHA0iCP4HzPfb/tvwmT0AAAAASUVORK5CYII="
+    />
+  </view>
+  <view class="libraryList">
+    <block wx:for="{{proList}}" wx:key="{{}}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.num}}</view>
+        <view class="td1" bindtap='toScan'>
+          <image class="scancode" src="{{item.scanCode}}" />
+        </view>
+        <view class="td1" bindtap='addManu'>
+          <image class="addManully" src="{{item.addManully}}" />
+        </view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.num}}</view>
+        <view class="td1" bindtap='toScan'>
+          <image class="scancode" src="{{item.scanCode}}" />
+        </view>
+        <view class="td1" bindtap='addManu'>
+          <image class="addManully" src="{{item.addManully}}" />
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+  <view class="proDetail " wx:if="{{showModal}}">
+    <form bindsubmit="formSubmit">
+      <view class="section">
+        <view class="section__title">产品名称：</view>
+        <input name="proname" />
+      </view>
+      <view class="section">
+        <view class="section__title">产品批次：</view>
+        <input name="batch" />
+      </view>
+      <view class="section">
+        <view class="section__title">产品数量：</view>
+        <input name="number" />
+      </view>
+      <view class="section">
+        <view class="section__title">生产日期：</view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDateChange" class="pick" name="picker">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="section">
+        <view class="section__title">有效　期：</view>
+        <picker mode="date" value="{{date1}}" start="2015-09-01" bindchange="bindDateChangeOne" class="pick" name="picker1">
+          <view class="picker">
+            {{date1}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="textCenter">
+        <button plain='true' bindtap='' formType="submit">提交</button>
+        <button plain='true' bindtap='hideDetail'>取消</button>
+      </view>
+    </form>
+  </view>
+
+
+  <view class="proTitle">产品信息列表:</view>
+  <view class="proinfoList">
+    <view class="tr">
+      <view class="th">名称</view>
+      <view class="th">批次</view>
+      <view class="th">数量</view>
+      <view class="th">生产日期</view>
+      <view class="th">有效期</view>
+    </view>
+    <block wx:for="{{proinfoList}}" wx:key="{{}}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.batch}}</view>
+        <view class="td">{{item.num}}</view>
+        <view class="td">{{item.productDate}}</view>
+        <view class="td">{{item.validityPeriod}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.batch}}</view>
+        <view class="td">{{item.num}}</view>
+        <view class="td">{{item.productDate}}</view>
+        <view class="td">{{item.validityPeriod}}</view>
+      </view>
+    </block>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

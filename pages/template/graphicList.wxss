@@ -1,0 +1,18 @@
+.weui-media-box__hd_in-appmsg {
+  width: 180rpx;
+}
+
+.weui-media-box__title {
+  font-size: 32rpx;
+}
+
+.weui-media-box__desc {
+  line-height: 38rpx;
+  font-size: 28rpx;
+}
+
+.overHide {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

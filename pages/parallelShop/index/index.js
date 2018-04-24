@@ -1,11 +1,7 @@
 var app = getApp();
 Page({
   data: {
-    imgUrls: [
-      '../../../images/199.jpg',
-      '../../../images/makers.jpg',
-      '../../../images/pingxingdian.jpg'
-    ],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
@@ -16,17 +12,41 @@ Page({
       { img: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVGhD7ZbdS1NxGMdPF/0R3UV/QeFt4MUUm+TLYE5Lu+miaG6ULNKkkGbmWzpdomKila8XWiKEL0FE1nyZe3HvZOoqLSuaOd0WRj2d53TUtf2Gm012Ns4DH/bj/J7n2ed7MXaohC1tWtoRfVbWoEksnpoTi6e5BDqhGzqyuuSaTUo6bBSJrBtVVeBTqTiJu7IS9NnZFnRltYPrtUBwwimXu0gLuIRTJnO9Sk09zmoH12RKysllhcJDGuYS6IiurHZwJUwQjUCQby0o+LkolQKXQUd0ZbWDyyASjfq6u8HX389taEd0ZbX/rRn6h75aXu4mDnIQdEVnVn+35iSSaV9vL3GIk9Cu6Mzq/y2tUJj6tbbWRxzgMOiM7kwIoKhD5rNnrb6+PmIzp6Gd0R0zULr09HNravUWsTEOQHfMQOlFouXP9CvJlzgF3TEDpc/MXFsuKoJ4BjNQ5tzcFdK/ZzyBGfggXIIJYsnLe0+69GfpWjED6c6fWPVhBsokkThIl/5Y5ZfBQkO68ydWfeacHDu+KA6tV1QQG5DNmhow3SgDc+lN5kzqQWLVh+76jIzH+LJ4jE604q2rC26srwd7oQwcliWwmxeZMz7jSp+Xfmai3SeTk48yrymzQuFp3Zn8DZdSudOEZ+ulQrCNvoB5NzDg2SqVMXdc6NPm5W/S/+qnmBDb1dg80mZoaAFzcSmDpakN3rz7trNsG3xmVrfGvM/Q2ArVTWM9rP5u3enVNRhWfwQt4CroeuvhbDurv1sJH+TlghsU93VQ0mkMC+zFmcA9VQM2Yv9ehNoXcZAxmwuud72F2pHvYYG9OBO452q7jti/F6H28UFIX0KCDxICPkjgAB8kYA8fhA8SMIBLFB02UD5ZDQvsjUYQ1fg68xm1IDMfvFA9YIfqwTChe3EmcE8kQYYNHvj1G6BnciN6QaJFJEE6JtxgW9mC5ufr8R3EHz5I4EC04IPsJ8gzpwfGnd4DQd6qJYruRUnXPDyY+hS0D11DBhld9MDThYNB1rL/IO2aj0H70JUP8j/wQSINonyku6Aass3dG3YYDwKpWuO6qNJ4IuX83Qnv7T6jI3AfupZ1zlxh9ROlKOoPxZUExkat4eAAAAAASUVORK5CYII=", text: '已领配' },
       { img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN/SURBVGhD7ZpZTxNhFIZ7oX/AS/0RXvgDvJG2WoyIeOESI8KVGI0B4oUYFwidUtZAFMQ1QQWjhgRFg0GjwnRayxJSIGmQxbZCAFmkVCi0x+8M30Btp2VohqFN5kleOnxzejhPp8ukjGa70Bq/7dcWsyM6hg3yMbLDuEZ3JweGMnYfGXxFx1gWdMbOai3D1vDbDOs/ZOrYS8uU4UCdfbfW2HlBW2y5FispDNuoM3KtoSGD45HwZ5Sxe2g7DW5rjRY/vy+sHnuI9f4vZBacibaTjp6xlKSaOX/mA4cvVo6W2wJplV1wps7B53StAwxmW5AM3ENbrZNSzPYazNYg1gj1x6u6AXuI9Q4NzqI3WUy0lXQMJVbuevMYtA4FY+Z8vQMuN45CrT2wnqwnTiAPhJu2WkfPsB7cF1p79ZWb7yHWOzS3WlyAM9FW0jlSwtkK4hQp/DgH5NGDFIYrpe00uK03cVBE9oXWShW5/dYNOBNtJ51wkWkfiCbnaaQIJve1hxwVDshTIojB7TyyFl6HIthDrDdGdpFo5L8YgEsiIhjzFy/kvfHwKf3qFa250jTG94iGYiLPOt2QXtUFN1qn4U7b7JaC90knbxSNFjftFoliIv7VAFS8/wHHym1APiu2FLxPJbkv9oiGYiLbjSoioIrIjCoioIrITNKJBIJBaHdMRXymJJXIymoQipqdkFH5HWa8frq6RtKILPkDUPByEE7V2GFkcpGubqCIyMnqHtFTj9BgjUBb3yTkP++Hed8K/7t3aRVyGxxw7l43/Jr9y6+Fo4hIr2sR2vpnYwZrBKb/LMPFx318XL99kENus+t7YYqsR0MRkXjAo4EieLRQRDg60UhYEQSHr/owzD+1NiOhRbaCKiKgishMUorgW3I4SSfSbB+HwyYOJuaW6MoaSSWC38SQvwft/VN0ZQNFRPKahiD70UDMYI1A3895aOhw8We6CP68/2kUUs1WYJ0z/Fo4iog87JiAwpaxmMEaARRJr7BB2bsh/owXv0ZKK7dBz+g8rYhEEZF4cI574QQ5XcdTFLwd9CzQPeIkrAiCMmfvdometoeT0CIIfZlsSsKLSEUVEVBFZEYVEVBFZEZ2EbF/VCoR2UV2OnGLSL1gQKnEfcEAfwlHqXVZ7HKKnQjOojNyRjqedPACFj3DZukYlkmEaBlL5sGbn3fR8VQSHI3mH7C+TZo8nzXjAAAAAElFTkSuQmCC', text: '待评价' },
     ],
-    parallel: [
-      { img: '../../../images/capital-1.jpg', title: '科技奶茶', busin: '超市', addr: '深圳市南山区TCL国际E城', url: "../shopDetail/shopDetail" },
-      { img: '../../../images/capital-1.jpg', title: '北京汇雅美苑文化创意发展有限公司', busin: '超市', addr: '深圳市南山区TCL国际E城', url: "../shopDetail/shopDetail" },
-      { img: '../../../images/capital-1.jpg', title: '北京红日升商贸有限公司', busin: '超市', addr: '深圳市南山区TCL国际E城', url: "../shopDetail/shopDetail" },
-    ],
+    parallel: [],
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log(options)
+    var that = this;
+    wx.request({
+      url: 'http://192.168.1.235:3000/scroll_the_picture?number=1', //轮播图
+      data: {
+        x: '',
+        y: ''
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        that.setData({
+          imgUrls: res.data
+        })
+      }
+    })
+
+    wx.request({
+      url: 'http://192.168.1.235:3000/parallel_shop/hot_parallel_shops',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        that.setData({
+          parallel: res.data
+        })
+      }
+    }) 
   },
 
   /*

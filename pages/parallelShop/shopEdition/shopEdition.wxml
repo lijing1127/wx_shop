@@ -31,4 +31,26 @@
     </view>
   </view>
 
+  <!-- <view class="clickScan" bindtap='clickScan'>
+    点击扫码
+  </view>
+
+  <view class="proDetail " wx:if="{{showModal}}">
+    <view class="textCenter">L-阿拉伯糖</view>
+    <view class="textCenter">￥960.0</view>
+    <view class="textCenter gw_num">
+      <text class="cut cut1" bindtap="cutClick" data-index="{{index}}">-</text>
+      <text class="num">1</text>
+      <text class="add add1" bindtap="addClick" data-index="{{index}}">+</text>
+    </view>
+    <view  class="textCenter">
+      <button plain='true' bindtap='hideDetail'>取消</button>
+      <button plain='true' bindtap='goShoppingmall'>加入购物车</button>
+    </view>
+
+    <navigator class="image" url="../shoppingMall/shoppingMall">
+      <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANRSURBVFhHzZhJaBRBFIZbFDVJL1U9TjQa0KsXL148CHoQRERcEAkieFAUTzkqKBq8KIjEDXE5qOhlerrHGIIHISjoRcG4RFwOehIiiAtolGhi/F/lHwkaY3q6O/YHRU/90/3q9atXW1u5p+S6ftlRW0NP7/i9RJ6/sWL7C3nr/yF01L3I1cPjldDRUWBZ0/nI5BK6+q1xwtU/Qs9fcdXzFldL2fOWh646P+KkOsxHJpeKo1fBia7I1tsp/QGcuxE56lNHoeBQyhcVz9tguhs5SSlfoLsVHBxCLp6glD8iR/cgFR6zmj8wiNplIHXa9ixK+aJiq7WSh5KPlPKFTOi5z0M49xB52NvleTrL0tnUVM8m4yHRM9NN1sVRny9Y82ey2YkT2d56MYCJO8B1dxYFtvsjVz1nk/GQEWyWxIzyMHL8JXBSlt09lOIjcyHmxEespgqidwYODpbq/HmU4gPnTsLIUMVxCpRSoWQ118H2RwTgOqXakPXYdIPtraOUCtiTbhG7ZVdvolQbUUNDo+QhjB2jlArI625E8B3CN4NS7WCUPYHBB6wmBpuRBZI2sHmKUjIwT50WgzKpUkoE8m6/dK9skiklQ/JEDMr6TKlmhi1rCrr2VaozQ1BfnCMOoquPUqoZOVaILUwxrZTSAd3yFG/dw2rNYMBdgoMDJdsuUkqH6qQqu21KsZEzjqy7cLJCKT3gXAu7Zg2l2IS2vy2pjb/SUVeYa4y76gil2ODZ2yhvblrWNErpAuMvxMkkJckL/hN0zTk2dBm5dDZuQe61y8pEc+mDt988EgW9klK+iHy/2UTQUYco5Q9M1s+wht5nNX9gsm5jFFdTyhdBsWjDyZdwchCD5i6iGeEaTLzoK7J00lw2mLOKoz+YSLrq68jVTMD90N+PLvIi/P/bqN87aSobql8dMKr3ye4E9WXGAWzLeIsh0NrDC3zBqL8ly5ysv3imF9pr3pINaMTs5641NM6mJJo0fIdVQ1mpRXyRXZRkJ31QtNQ3C6Opfj9Ew3tN3dZLx4qgfDGQFBgjgn28JRsCy5qKSHQbJ83B2+Rin6zXvOUX+L8VDsqZZgDX77hKHrbw7+yQBV+6Do1dxPXAeEuYfAuX6MLB43JYpzwGlvUTX1HtmuwQ4HsAAAAASUVORK5CYII=" />
+    </navigator>
+  </view> -->
+
 </view>

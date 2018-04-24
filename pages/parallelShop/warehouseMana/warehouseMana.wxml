@@ -1,0 +1,30 @@
+<view class="contain">
+  <view class="warehouse">仓库：{{warehouse}}</view>
+  <view class="section warehouse">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <text>管理类型：{{array[index]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class="libraryTitle">库单:</view>
+  <view class="libraryList {{reply?'on':'off'}}">
+    <view class="tr bg-w">
+      <view class="th">名称</view>
+      <view class="th th1">金额</view>
+      <view class="th th1">状态</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="{{code}}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.money}}</view>
+        <navigator class="td" url="{{item.url}}">{{item.status}}</navigator>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.money}}</view>
+        <view class="td">{{item.status}}</view>
+      </view>
+    </block>
+  </view>
+</view>

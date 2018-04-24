@@ -1,12 +1,4 @@
-.weui-media-box__hd_in-appmsg{
-  width: 180rpx;
-}
-.weui-media-box__title{
-  font-size: 30rpx;
-}
-.weui-media-box__desc{
-  line-height: 38rpx;
-}
+
 .weuiTitle{
   font-size:36rpx;
   color: #ad0e11;
@@ -24,13 +16,14 @@
   /* margin:0 0 1% 1%; */
   margin: 2px;
   background: #fff;
-   padding-bottom: 18rpx; 
+  padding-bottom: 18rpx; 
   justify-content: center;
 }
 .productList image{
-  width: 300rpx;  
+  width: 90%;  
+  margin-left: 5%;
   height: 300rpx;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-self: center;
   text-align: center */
 }
@@ -84,11 +77,12 @@
   }
 
   .parallelColler{
-    border:0;
-    border-radius: 0;
+    padding:0 20rpx;
     color: #fff;
     font-size: 32rpx;
+    /* background: #ad0e11 */
   }
+
   .clickable{
     background: #ad0e11;
   }
@@ -107,16 +101,16 @@
   }
 
   .containView{
-    position: relative;
+    padding-bottom: 100rpx;
   }
   .proDetail{
-    background: #fff;
+    background: #fff; 
     box-shadow: 5px 5px 5px #ddd;
     border-top: 3px solid #ad0e11;
     border-radius: 10rpx;
     padding: 60rpx 2% 30rpx;
     width: 60%;
-    position: absolute;
+    position: fixed;
     left: 18%;
     bottom: 50%;
     font-size: 28rpx;
@@ -127,4 +121,19 @@
     margin-top: 20rpx;
     color: #ad0e11;
     font-size: 32rpx;
+  }
+  .weui-cell{
+    padding: 5rpx 20rpx;
+  }
+  .weui-cell__bd{
+    color: #333;
+  }
+  .bottomPosition{
+    border-top: 1px solid #d9d9d9;
+    width: 100%;
+    line-height: 2.55555556;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0
   }
