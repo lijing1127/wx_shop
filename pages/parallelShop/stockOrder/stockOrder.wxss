@@ -1,0 +1,124 @@
+.contain {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+
+.instruct {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15rpx;
+}
+
+.addstyle {
+  line-height: 50rpx;
+  margin-left: 30rpx;
+}
+
+.th {
+  width: 45%;
+  justify-content: center;
+  color: #ad0e11;
+  display: flex;
+  height: 2.5rem;
+  align-items: center;
+  font-weight: bold;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2.5rem;
+  align-items: center;
+}
+
+.td {
+  width: 80%;
+  justify-content: center;
+  text-align: center;
+}
+
+.td1 {
+  width: 20%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.scancode {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.addManully {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.proDetail {
+  background: #fff;
+  box-shadow: 5px 5px 5px #ddd;
+  border-top: 3px solid #ad0e11;
+  border-radius: 10rpx;
+  padding: 40rpx 2% 20rpx;
+  width: 80%;
+  position: fixed;
+  left: 8%;
+  top: 20%;
+  font-size: 28rpx;
+}
+
+.proDetail button {
+  display: inline-block;
+  border: 0;
+  margin-top: 15rpx;
+  color: #ad0e11;
+  font-size: 32rpx;
+}
+
+.proDetail .textCenter {
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.section {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.section input {
+  border: 1px solid #ad0e11;
+  border-radius: 8rpx;
+  width: 67%;
+  padding: 8rpx;
+}
+
+.section__title{
+  line-height: 60rpx;
+}
+
+.pick {
+  border: 1px solid #ad0e11;
+  width: 67%;
+  padding: 8rpx;
+  border-radius: 8rpx;
+}
+
+.picker {
+  padding-left: 5rpx;
+}
+
+.proTitle {
+  margin: 20rpx 10rpx;
+}
+
+.proinfoList {
+  margin-bottom: 20rpx;
+}
