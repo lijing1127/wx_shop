@@ -113,5 +113,13 @@ Page({
   regPrice: function(regx) {
     var reg_test = /^([1-9][0-9]*)+(.[0-9]{1,3})?$/;
     return reg_test.test(regx);
+  tapScan:function(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        console.log(res)
+      }
+    })
   }
+
 })
