@@ -1,1 +1,6 @@
 /* pages/parallelShop/waitReceive/waitReceive.wxss */
+.weui-cells__title{
+  color: #ad0e11;
+  font-size:32rpx;
+  text-align: center;
+}
