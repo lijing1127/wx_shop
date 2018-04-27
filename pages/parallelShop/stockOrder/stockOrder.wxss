@@ -100,7 +100,7 @@
   padding: 8rpx;
 }
 
-.section__title{
+.section__title {
   line-height: 60rpx;
 }
 
@@ -120,5 +120,27 @@
 }
 
 .proinfoList {
-  margin-bottom: 20rpx;
+  margin-bottom: 120rpx;
 }
+
+.dealStatue {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  display: flex;
+  width: 100%;
+}
+
+.dealStatue button{
+  flex: 1;
+  border: none;
+}
+.dealStatue .btn1{
+  background-color: #fff;
+}
+
+.dealStatue .btn2{
+  background-color: #ad0e11;
+  color: #fff;
+}
+
