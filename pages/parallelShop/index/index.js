@@ -21,7 +21,7 @@ Page({
     console.log(options)
     var that = this;
     wx.request({
-      url: 'http://192.168.1.235:3000/scroll_the_picture?number=1', //轮播图
+      url: 'http://ybhm.ybyt.cc/scroll_the_picture?number=1', //轮播图
       data: {
         x: '',
         y: ''
@@ -37,7 +37,7 @@ Page({
     })
 
     wx.request({
-      url: 'http://192.168.1.235:3000/parallel_shop/hot_parallel_shops',
+      url: 'http://ybhm.ybyt.cc/parallel_shop/hot_parallel_shops',
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -45,6 +45,7 @@ Page({
         that.setData({
           parallel: res.data
         })
+        console.log(res.data);        
       }
     }) 
   },
@@ -55,15 +56,18 @@ Page({
 
   parallelBtn: function () {
     //是否是管理员
-    if (app.globalData.has_parallel_shop) {
-      wx.navigateTo({
-        url: '/pages/parallelShop/shopEdition/shopEdition',
-      })
-    } else {
-      wx.showToast({
-        title: "您还没有平行店"
-      })
-    }
+    // if (app.globalData.has_parallel_shop) {
+    //   wx.navigateTo({
+    //     url: '/pages/parallelShop/shopEdition/shopEdition',
+    //   })
+    // } else {
+    //   wx.showToast({
+    //     title: "您还没有平行店"
+    //   })
+    // }
+    wx.navigateTo({
+      url: '/pages/parallelShop/shopEdition/shopEdition',
+    })
   }
 
 
