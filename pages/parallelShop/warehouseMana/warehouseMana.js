@@ -5,6 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+    ary: ['请选择', '深圳总仓库', '新疆总仓库',],
+    objectAry: [
+      {
+        id: 0,
+        name: '请选择'
+      }, {
+        id: 1,
+        name: '深圳总仓库'
+      }, {
+        id: 2,
+        name: '新疆总仓库'
+      }
+    ],
+    idx: 0,
     array: ['请选择', '入库', '出库', '调拨', '批量'],
     objectArray: [
       {
@@ -35,6 +49,20 @@ Page({
       { name: "CG20180409642989", money: "80000", status: "已受理" }
     ],
     warehouse: '深圳总仓库'
+  },
+
+  bindPicker1Change: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    // if (e.detail.value == 0) {
+    //   this.setData({ reply: false })
+    // } else {
+    //   console.log(e.detail.value)
+    //   this.setData({ reply: true })
+    // }
+
+    this.setData({
+      idx: e.detail.value
+    })
   },
 
   bindPickerChange: function (e) {

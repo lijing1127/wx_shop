@@ -99,14 +99,9 @@
   </view>
 
 
-
-
-
-
-
-
-
-
-
+  <view class='dealStatue'>
+    <button plain='true' bindtap='' class='btn1'>暂存</button>
+    <button plain='true' bindtap='' class='btn2'>确认</button>
+  </view>
 
 </view>
