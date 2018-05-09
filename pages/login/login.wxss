@@ -27,3 +27,10 @@
 .loginBlockBtn, .loginBlockBtn>button {
   background-color: #ccc;
 }
+
+.goregister{
+  color: #fff;
+  text-align: right;
+  margin: 20rpx 10rpx 0 0;
+  font-size: 28rpx;
+}

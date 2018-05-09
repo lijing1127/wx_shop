@@ -60,6 +60,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    has_parallel_shop: false,
+    has_parallel_shop: true,
   }
 })

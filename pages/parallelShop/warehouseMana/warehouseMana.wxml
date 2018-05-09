@@ -1,5 +1,11 @@
 <view class="contain">
-  <view class="warehouse">仓库：{{warehouse}}</view>
+  <view class="warehouse">
+    <picker bindchange="bindPicker1Change" value="{{idx}}" range="{{ary}}">
+      <view class="picker">
+        <text>仓库：{{ary[idx]}}</text>
+      </view>
+    </picker>
+  </view>
   <view class="section warehouse">
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
       <view class="picker">
