@@ -8,3 +8,8 @@
   width: 90rpx;
   height: 90rpx;
 }
+
+.slide-image {
+  width: 100%;
+  height: 400rpx;
+}

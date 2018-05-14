@@ -1,10 +1,12 @@
 {
   "pages": [
+    
     "pages/parallelShop/index/index",
     "pages/parallelShop/warehouseMana/warehouseMana",
     "pages/parallelShop/stockOrder/stockOrder",
     "pages/healthy/index/index",
     "pages/healthy/pressure/pressure",
+    "pages/healthy/preHistory/preHistory",
     "pages/healthy/sugar/sugar",
     "pages/healthy/weight/weight",
     "pages/user/index/index",
