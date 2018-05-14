@@ -1,2 +1,30 @@
-<!--pages/healthy/pressure/pressure.wxml-->
-<text>pages/healthy/pressure/pressure.wxml</text>
+<view class='content'>
+  <view class='measuring'>
+    <a href="#" data-icon="✰" class="button pink serif skew glossy">准备测量</a>
+  </view>
+
+  <view class="libraryList">
+    <view class="tr bg-w">
+      <view class="th">年龄</view>
+      <view class="th th1">收缩压</view>
+      <view class="th th1">舒张压</view>
+    </view>
+    <block wx:for="{{standard}}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.age}}</view>
+        <view class="td">{{item.systolic}}</view>
+        <navigator class="td" url="{{item.url}}">{{item.diastolic}}</navigator>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.age}}</view>
+        <view class="td">{{item.systolic}}</view>
+        <view class="td">{{item.diastolic}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class='history'>
+    <navigator url="../preHistory/preHistory">查看历史数据</navigator>
+  </view>
+
+</view>

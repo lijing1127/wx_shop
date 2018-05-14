@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [],
+    imgUrls: [
+      '../../../images/pingxingdian.jpg',
+      '../../../images/makers.jpg',
+      '../../../images/199.jpg'
+    ],
     iconGroup: [
       { img: '../../../images/pressure.png', text: '血　压', url: "../pressure/pressure" },
       { img: '../../../images/sugar.png', text: '血　糖', url: "../sugar/sugar" },
