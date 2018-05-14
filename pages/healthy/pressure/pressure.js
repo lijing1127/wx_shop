@@ -1,66 +1,19 @@
 // pages/healthy/pressure/pressure.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    standard: [
+      { age: "16-25", systolic: "110", diastolic: '70' },
+      { age: "26-30", systolic: "112", diastolic: '73' },
+      { age: "31-35", systolic: "114", diastolic: '74' },
+      { age: "36-40", systolic: "116", diastolic: '76' },
+      { age: "41-45", systolic: "122", diastolic: '78' },
+      { age: "46-50", systolic: "128", diastolic: '79' },
+      { age: "51-55", systolic: "134", diastolic: '80' },
+      { age: "56-60", systolic: "139", diastolic: '82' },
+      { age: "61-65", systolic: "145", diastolic: '83' },
+    ],   
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
