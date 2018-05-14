@@ -1,1 +1,10 @@
 /* pages/healthy/index/index.wxss */
+
+.weui-grids, .weui-grid {
+  border:0;
+}
+
+.weui-grids .weui-grid__icon {
+  width: 90rpx;
+  height: 90rpx;
+}
