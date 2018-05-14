@@ -1,16 +1,11 @@
-// pages/healthy/index/index.js
+// pages/healthy/sugar/sugar.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [],
-    iconGroup: [
-      { img: '../../../images/pressure.png', text: '血　压', url: "../pressure/pressure" },
-      { img: '../../../images/sugar.png', text: '血　糖', url: "../sugar/sugar" },
-      { img: '../../../images/weight.png', text: '体　重', url: "../weight/weight" },
-    ],
+  
   },
 
   /**
