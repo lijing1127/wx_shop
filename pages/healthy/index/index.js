@@ -1,4 +1,4 @@
-// pages/leftRight/index.js
+// pages/healthy/index/index.js
 Page({
 
   /**

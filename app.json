@@ -3,13 +3,12 @@
     "pages/parallelShop/index/index",
     "pages/parallelShop/warehouseMana/warehouseMana",
     "pages/parallelShop/stockOrder/stockOrder",
-    "pages/leftRight/index",
+    "pages/healthy/index/index",
+    "pages/user/index/index",
     "pages/parallelShop/shopDetail/shopDetail",
     "pages/parallelShop/waitReceive/waitReceive",
     "pages/parallelShop/receiveDetail/receiveDetail",
     "pages/parallelShop/shopEdition/shopEdition",
-    "pages/parallelShop/shoppingMall/shoppingMall",
-    "pages/parallelShop/bill/bill",
     "pages/parallelShop/generate/generate",
     "pages/register/register",
     "pages/index/index",
@@ -28,8 +27,12 @@
         "text": "平行店"
       },
       {
-        "pagePath": "pages/leftRight/index",
-        "text": "左右店"
+        "pagePath": "pages/healthy/index/index",
+        "text": "健康数据"
+      },
+      {
+        "pagePath": "pages/user/index/index",
+        "text": "我的"
       }
     ]
   }
