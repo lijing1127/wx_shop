@@ -1,39 +1,43 @@
 /* pages/parallelShop/shopEdition/shopEdition.wxss */
 @import '../../../style/weui.wxss';
+
 /* 头部搜索框 */
-.headSearch{
-  height:80rpx;
+
+.headSearch {
+  height: 80rpx;
   display: flex;
   background: #ad0e11;
 }
-.headSearch input{
-  flex:1;
-  height:52rpx;
+
+.headSearch input {
+  flex: 1;
+  height: 52rpx;
   margin: 14rpx 0 0 2%;
   padding-left: 3%;
-  border:0;
+  border: 0;
   background: #fff;
   border-radius: 10rpx;
   --webkit-appearance: none;
   font-size: 24rpx;
 }
-.headSearch navigator{
+
+.headSearch navigator {
   display: inline-block;
-  margin-top: 12rpx;  
+  margin-top: 12rpx;
 }
 
 .headSearch navigator button {
-  height:52rpx;
+  height: 52rpx;
   line-height: 52rpx;
-  border:0;
-  color: #fff; 
+  border: 0;
+  color: #fff;
   background: transparent;
   font-size: 28rpx;
 }
 
 .slide-image {
-  width:100%;
-  height:400rpx;
+  width: 100%;
+  height: 400rpx;
 }
 
 .weui-grids {
@@ -42,32 +46,32 @@
 }
 
 .weui-grids, .weui-grid {
-  border:0;
+  border: 0;
 }
 
 .weui-grid__label {
-  margin-top:16rpx;
+  margin-top: 16rpx;
 }
 
-
-
 /* 扫一扫按钮 */
+
 .clickScan {
   width: 80px;
   height: 80px;
-  background: -webkit-linear-gradient( #ad0e11 , #f8b372); /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient( #ad0e11,#f8b372 ); /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient( #ad0e11, #f8b372); /* Firefox 3.6 - 15 */
-  background: linear-gradient(#ad0e11 , #f8b372); /* 标准的语法（必须放在最后） */
+  background: -webkit-linear-gradient(#ad0e11, #f8b372); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#ad0e11, #f8b372); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#ad0e11, #f8b372); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#ad0e11, #f8b372); /* 标准的语法（必须放在最后） */
   color: #fff;
-  margin: 0 auto; 
+  margin: 0 auto;
   border-radius: 50%;
   text-align: center;
   font-size: 26rpx;
   line-height: 80px;
 }
-.proDetail{
-  background: #fff; 
+
+.proDetail {
+  background: #fff;
   box-shadow: 5px 5px 5px #ddd;
   border-top: 3px solid #ad0e11;
   border-radius: 10rpx;
@@ -78,19 +82,22 @@
   bottom: 50%;
   font-size: 28rpx;
 }
-.proDetail button{
+
+.proDetail button {
   display: inline-block;
   border: 0;
   margin-top: 20rpx;
   color: #ad0e11;
   font-size: 32rpx;
 }
-.proDetail .textCenter{
+
+.proDetail .textCenter {
   text-align: center;
   padding: 10rpx 0;
 }
 
 /* 选择框 */
+
 .gw_num {
   width: 220rpx;
   line-height: 52rpx;
@@ -98,7 +105,8 @@
   margin: 0 auto;
   text-align: center;
 }
-.cut,.add {
+
+.cut, .add {
   display: inline-block;
   height: 52rpx;
   width: 52rpx;
@@ -107,14 +115,17 @@
   border-radius: 26rpx;
   font-size: 32rpx;
 }
-.cut1{
+
+.cut1 {
   background: #ddd;
   color: #fff;
 }
-.add1{
+
+.add1 {
   color: #fff;
   background: #ad0e11;
 }
+
 .gw_num .num {
   display: inline-block;
   text-align: center;
@@ -124,13 +135,26 @@
   line-height: 52rpx;
   border: 0;
 }
-.image{
-  width:45px;
+
+.image {
+  width: 45px;
   height: 45px;
   margin: 0 auto;
-  
 }
-.image image{
-  width:45px;
+
+.image image {
+  width: 45px;
   height: 45px;
+}
+
+.pickView {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pick {
+  /* border: 1px solid #2b73af; */
+  text-align: center;
+  color: #2b73af;
+  padding: 5rpx 10rpx;
 }

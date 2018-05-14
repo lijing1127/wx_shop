@@ -8,23 +8,23 @@
   </view>
   <view class="libraryList">
     <block wx:for="{{proList}}" wx:key="{{}}">
-      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}" id="{{item.id}}">
         <view class="td">{{item.name}}</view>
         <view class="td">{{item.num}}</view>
         <view class="td1" bindtap='toScan'>
           <image class="scancode" src="{{item.scanCode}}" />
         </view>
-        <view class="td1" bindtap='addManu'>
+        <view class="td1" bindtap='addManu' id="{{item.id}}">
           <image class="addManully" src="{{item.addManully}}" />
         </view>
       </view>
-      <view class="tr" wx:else>
+      <view class="tr" wx:else id="{{item.id}}">
         <view class="td">{{item.name}}</view>
         <view class="td">{{item.num}}</view>
         <view class="td1" bindtap='toScan'>
           <image class="scancode" src="{{item.scanCode}}" />
         </view>
-        <view class="td1" bindtap='addManu'>
+        <view class="td1" bindtap='addManu' id="{{item.id}}">
           <image class="addManully" src="{{item.addManully}}" />
         </view>
       </view>
@@ -36,7 +36,7 @@
     <form bindsubmit="formSubmit">
       <view class="section">
         <view class="section__title">产品名称：</view>
-        <input name="proname" />
+        <input name="proname" value="{{inputVal}}" />
       </view>
       <view class="section">
         <view class="section__title">产品批次：</view>
@@ -44,7 +44,7 @@
       </view>
       <view class="section">
         <view class="section__title">产品数量：</view>
-        <input name="number" />
+        <input name="number" type="number" />
       </view>
       <view class="section">
         <view class="section__title">生产日期：</view>
@@ -80,7 +80,7 @@
       <view class="th">生产日期</view>
       <view class="th">有效期</view>
     </view>
-    <block wx:for="{{proinfoList}}" wx:key="{{}}">
+    <block wx:for="{{proinfoList}}" wx:key="{{item.id}}">
       <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
         <view class="td">{{item.name}}</view>
         <view class="td">{{item.batch}}</view>
