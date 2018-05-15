@@ -9,7 +9,7 @@
       <view class="th th1">收缩压</view>
       <view class="th th1">舒张压</view>
     </view>
-    <block wx:for="{{standard}}">
+    <block wx:for="{{standard}}" wx:key="{{item.id}}">
       <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
         <view class="td">{{item.age}}</view>
         <view class="td">{{item.systolic}}</view>
