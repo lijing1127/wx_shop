@@ -1,2 +1,25 @@
-<!--pages/user/index/index.wxml-->
-<text>pages/user/index/index.wxml</text>
+<!--我的-->
+
+<view class='userIdx'>
+  <!-- 头部信息 -->
+  <view class='userInfo'>
+    <image src='{{headerImg}}'></image>
+    <view class='userName'>{{userName}}</view>
+    <view class='lpNum'>领配值：{{lpNum}}</view>
+  </view>
+  <!-- 列表 -->
+  <view class='dataList weui-cells'>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <p>健康数据</p>
+      </view>
+      <view class="weui-cell__ft"></view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <p>个人设置</p>
+      </view>
+      <view class="weui-cell__ft"></view>
+    </view>
+  </view>
+</view>
