@@ -2,9 +2,10 @@
 <view>
   <!-- 头部搜索框 -->
   <view class="headSearch">
+    
     <input placeholder="搜索" />
     <navigator>
-      <button plain="true" bindtap='parallelBtn'>管理版</button>
+      <button plain="true" bindtap='parallelBtn'>SPD</button>
     </navigator>
   </view>
   <!-- 轮播图 -->
@@ -30,7 +31,7 @@
   <view>
     <view class="weuiTitle weui-panel__hd">推荐平行店</view>
     <view class="weui-panel__bd" wx:for="{{parallel}}" wx:for-item="item" wx:key="{{index}}">
-      <navigator url="../shopDetail/shopDetail?id={{item.id}}" data-index="{{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="../shopDetail/shopDetail" data-index="{{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" src="{{item.img}}" />
         </view>

@@ -1,41 +1,74 @@
-<import src="../../template/graphicList.wxml" />
-
-
+<!-- <import src="../../template/graphicList.wxml" /> -->
 <view class="containView">
   <!-- 店铺信息 -->
   <view class="weui-panel__bd">
-    <navigator class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-       <template is="shopData" data="{{...shopData}}" /> 
-    </navigator>
-  </view>
-<!-- 领配产品 -->
-  <view class="weuiTitle weui-panel__hd">领配产品</view>
-  <view class="background">
-    <view wx:for="{{shopProduct}}"  wx:key="{{index}}" class="productList">
-      <view>
-        <image src="{{item.product_image.image}}" mode="aspectFit" bindtap="showDetail"/>
-        <view class="intro">{{item.product_name}}</view>
-        <view class="intro">{{item.now_product_price}}</view>
-        <view class="gw_num">
-          <text class="cut cut1" bindtap="cutClick" data-index="{{index}}">-</text>
-          <text class="num">{{item.num}}</text>
-          <text class="add add1" bindtap="addClick" data-index="{{index}}">+</text>
-        </view>
+    <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="{{shopData.img}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{shopData.name}}</view>
+        <!-- <view class="weui-media-box__desc">主营：{{busin}}</view>  -->
+        <view class="weui-media-box__desc">{{shopData.address}}</view>
       </view>
     </view>
   </view>
+  <!-- 领配产品 -->
+  <view class="weuiTitle weui-panel__hd">领配产品</view>
 
+  <view class="contain">
+    <!--左侧栏-->
+    <view class="nav_left">
+      <block wx:for="{{cateItems}}" wx:key="{{cateItems.cate_id}}">
+        <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
+      </block>
+    </view>
+    <!--右侧栏-->
+    <view class="nav_right">
+      <!--如果有数据，才遍历项-->
+      <view wx:if="{{cateItems[curIndex].ishaveChild}}">
+        <block wx:for="{{cateItems[curIndex].children}}" wx:key="{{item.id}}">
+          <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb proimage" src="{{item.image}}" mode="aspectFit" bindtap="showDetail" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.name}}</view>
+                <view class="cont">
+                  <view class="proprice">{{item.price}}</view>
+                  <view class="gw_num">
+                    <text class="cut cut1" bindtap="cutClick" data-index="{{index}}">-</text>
+                    <text class="num">0</text>
+                    <text class="add add1" bindtap="addClick" data-index="{{index}}">+</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!--如果无数据，则显示数据-->
+      <view class="nodata_text" wx:else>该分类暂无数据</view>
+    </view>
+  </view>
   <!-- 产品详情 -->
-  <view class="proDetail " wx:if="{{showModal}}">
+  <!-- <view class="proDetail " wx:if="{{showModal}}">
     <view>规格：20ml*20支/盒</view>
     <view>包装：20ml*20支/盒</view>
     <view>简介：调血糖 优化肠道菌群 活力肠道 排毒养颜 降血压</view>
     <button plain='true' bindtap='hideDetail'>关闭</button>
-  </view>
+  </view> -->
 
   <view class="bottomPosition">
     <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__bd">总价：{{totalPrice}}</view>
+      <!-- <view>
+        <text>购物车图标</text>
+      </view> -->
+      <!-- <view> -->
+        <view class="weui-cell__bd">总价：{{totalPrice}}</view>
+        <!-- <view class="weui-cell__bd">总领配值：{{totalPrice}}</view> -->
+      <!-- </view> -->
       <button class="parallelColler" style="background:{{backgroundColor}}" bindtap='receiveDetail'>{{showText}}</button>
     </view>
   </view>
