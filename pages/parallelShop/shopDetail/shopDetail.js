@@ -11,6 +11,7 @@ Page({
     backgroundColor: '#d9d9d9',
     showText: "请选择",
     go: false,
+
     cateItems: [
       {
         cate_id: 1,
@@ -22,25 +23,29 @@ Page({
             child_id: 1,
             name: 'L-阿拉伯糖（体验装）',
             price:'960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num:0
           },
           {
             child_id: 2,
             name: '阿拉伯糖（体验装）',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 3,
             name: '萨奇母婴饮用水',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 4,
             name: '萨奇饮用水',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           }
         ]
       },
@@ -54,25 +59,29 @@ Page({
             child_id: 1,
             name: 'L-阿拉伯糖（体验装）',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 2,
             name: '萨奇母婴',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 3,
             name: '阿拉伯糖（体验装）',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 4,
             name: '萨奇母婴饮用水',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           }
         ]
       },
@@ -86,80 +95,47 @@ Page({
             child_id: 1,
             name: 'L-阿拉伯糖（体验装）',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 2,
             name: '阿拉伯糖（体验装）',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 3,
             name: '萨奇母婴饮用水',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           },
           {
             child_id: 4,
             name: '阿拉伯糖（体验装）',
             price: '960.0',
-            image: "../../../images/L-alabo.png"
+            image: "../../../images/L-alabo.png",
+            num: 0
           }
         ]
-      },
-      {
-        cate_id: 4,
-        cate_name: "庆通宝",
-        ishaveChild: true,
-        children: []
       }
     ],
     curNav: 1,
-    curIndex: 0  
+    curIndex: 0,
   },
-
-  //计算总额
-  getTotalPrice() {
-    let shopProduct = this.data.shopProduct;                  // 获取购物车列表
-    let total = 0;
-    for (let i = 0; i < shopProduct.length; i++) {         // 循环列表得到每个数据// 判断选中才会计算价格
-      total += shopProduct[i].num * shopProduct[i].now_product_price;     // 所有价格加起来  
-    }
-    this.setData({                                // 最后赋值到data中渲染到页面
-      shopProduct: shopProduct,
-      totalPrice: total.toFixed(2)
-    });
-  },
-  //增加数量
-  addClick: function (e) {
-    const index = e.currentTarget.dataset.index;
-    let shopProduct = this.data.shopProduct;
-    let num = parseInt(shopProduct[index].num);
-    num = num + 1;
-    shopProduct[index].num = num;
-    this.setData({
-      shopProduct: shopProduct,
-    });
-    this.getTotalPrice();
-    this.comparAmount();
-  },
-  //减少数量
-  cutClick: function (e) {
-    const index = e.currentTarget.dataset.index;
-    let shopProduct = this.data.shopProduct;
-    let num = parseInt(shopProduct[index].num);
-    if (num < 1) {
-      return false;
-    }
-    num = num - 1;
-    shopProduct[index].num = num;
-    this.setData({
-      shopProduct: shopProduct
-    });
-    this.getTotalPrice();
-    this.comparAmount();
-  },
+  // addClick: function (e) {
+  //   console.log(e)
+  //   const index = e.currentTarget.dataset.index;
+  //   const id = e.currentTarget.dataset.id;
+  //   console.log(id)
+  //   let goods = this.data.goods;
+  //   console.log(goods)
+  //   // var num = this.data.cart.list[id] || 0;
+  //   // this.data.cart.list[id] = num + 1;
+  //   // this.countCart();
+  // },
 
   //模态框点击展示功能
   preventTouchMove: function () {
@@ -201,11 +177,8 @@ Page({
 
     }
   },
-
-  onLoad: function (options) {  
+  onLoad: function (options) {
   },
-
-  // 事件处理函数
   switchRightTab: function (e) {
     // 获取item项的id，和数组的下标值  
     let id = e.target.dataset.id,
@@ -216,6 +189,7 @@ Page({
       curIndex: index
     })
   },
+
   //平行领配跳转页面
   receiveDetail: function () {
     if (this.go) {
