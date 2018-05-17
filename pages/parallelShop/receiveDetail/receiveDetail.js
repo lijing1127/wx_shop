@@ -5,14 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
+    consignee:"朱女士",
+    userPhone:"15940619301",
+    receivingAddress:"深圳市南山区t桃园地铁站路口一楼",
     productList: [
-      { id: "01", name: "II代芯动力", price: "100", count: "2", image: "../../../images/capital-1.jpg" },
-      { id: "02", name: "干净", price: "200", count: "2", image: "../../../images/capital-1.jpg" },
-      { id: "03", name: "阿拉伯糖", price: "300", count: "2", image: "../../../images/capital-1.jpg" },
-      { id: "03", name: "阿拉伯糖", price: "400", count: "2", image: "../../../images/capital-1.jpg" }
+      { id: "01", name: "II代芯动力", price: "100", count: "1", image: "../../../images/L-alabo.png" },
+      { id: "02", name: "甘净", price: "200", count: "2", image: "../../../images/L-alabo.png" },
+      { id: "03", name: "阿拉伯糖", price: "300", count: "3", image: "../../../images/L-alabo.png" },
+      { id: "04", name: "健康水", price: "400", count: "4", image: "../../../images/L-alabo.png" },
+      { id: "05", name: "合晶能修复按摩膏", price: "400", count: "5", image: "../../../images/L-alabo.png" },
+      { id: "06", name: "高钙米", price: "400", count: "6", image: "../../../images/L-alabo.png" }
       
     ],
-    totalPrice: 0
+    totalPrice: 0,
+    array: ['线下领配', '线上领配'],
+    index:0
   },
 
   /**
@@ -37,52 +44,12 @@ Page({
    
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
   }
+
+
 })

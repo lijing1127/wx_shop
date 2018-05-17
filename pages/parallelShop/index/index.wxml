@@ -2,7 +2,7 @@
 <view>
   <!-- 头部搜索框 -->
   <view class="headSearch">
-    
+    <view class='nowAddress'>{{nowAddress}}</view>
     <input placeholder="搜索" />
     <navigator>
       <button plain="true" bindtap='parallelBtn'>SPD</button>

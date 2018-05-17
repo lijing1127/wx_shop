@@ -1,23 +1,45 @@
 <!--pages/parallelShop/receiveDetail/receiveDetail.wxml 领配详情 -->
-<view>
-  <view class='receiveDetailBlock'>
-    <image src='../../../images/capital-1.jpg' />
+<view class='containView'>
+  <!-- 头部地址 -->
+  <view class="weui-media-box weui-media-box_text">
+    <text class="weui-media-box__title">收货人：{{consignee}}</text>
+    <view class="weui-media-box__desc">联系电话：{{userPhone}}</view>
+    <view class="weui-media-box__desc">收货地址：{{receivingAddress}}</view>
+    <navigator class='chooseAddress'>修改收货地址</navigator>
   </view>
-  <view class="weui-panel weui-panel_access receiveDetailList">
-      <view class="weui-panel__hd">已选产品列表</view>
-      <view class="weui-panel__bd">
-          <navigator url="#" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ productList }}" wx:key="{{ index }}">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                  <image class="weui-media-box__thumb" src="{{ item.image }}" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                  <view class="weui-media-box__title">{{ item.name }}</view>
-                  <view class="weui-media-box__desc">￥ {{ item.price }} X {{ item.count }} </view>
-              </view>
-          </navigator>
+
+  <!-- 产品列表 -->
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">所选产品列表</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg" wx:for="{{productList}}" wx:key="{{index}}">
+        <view class="weui-media-box__hd">
+          <image class="weui-media-box__thumb" src="{{item.image}}"></image>
+        </view>
+        <view class="weui-media-box__bd">
+          <text class="weui-media-box__title">{{item.name}}</text>
+          <view class="weui-media-box__desc">
+            <text>￥{{item.price}}元</text>
+            <text class='number'>数量：{{item.count}}</text>
+          </view>
+        </view>
       </view>
+    </view>
   </view>
-  <view class='receiveDetailBlockBtn'>
-    <text> 总计：{{ totalPrice }}元 </text>
+
+  <!-- 领配方式 -->
+  <view class='chooseHow'>
+    <view class="weui-cells__title">请选择您的领配方式</view>
+    <view class="section">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          领配方式：{{array[index]}}
+        </view>
+      </picker>
+    </view>
   </view>
+
+  <!-- 提交订单按钮 -->
+  <button class='totalPrice'>合计：{{totalPrice}}元　确认领配</button>
+
 </view>

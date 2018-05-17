@@ -1,29 +1,77 @@
 /* pages/parallelShop/receiveDetail/receiveDetail.wxss */
-.receiveDetailBlock {
-  text-align: center;
-  margin: 30rpx 0;
+
+.containView {
+  padding-bottom: 150rpx;
 }
 
-.receiveDetailBlock>image {
-  width: 490rpx;
-  height: 490rpx;
-  margin-top: 10rpx;
+.weui-media-box_text {
+  margin: 10rpx 10rpx 0 10rpx;
+  border-bottom: 1px solid #ccc;
+  position: relative;
 }
 
-.receiveDetailBlockBtn {
-  position: fixed;
-  width: 100%;
-  text-align: right;
-  line-height:2.55555556;
-  color: #fff;
-  bottom: 0rpx;
+.weui-media-box_text .weui-media-box__title {
+  font-size: 30rpx;
+}
+
+.weui-media-box_text .weui-media-box__desc {
+  margin-top: 8rpx;
+}
+
+.weui-media-box_text .chooseAddress {
+  position: absolute;
+  top:30rpx;
+  right: 0;
+  color: #ad0e11;
+  font-size: 30rpx;
+}
+
+.weui-panel {
+  margin: 0 10rpx;
+}
+
+.weui-panel:before {
+  border:0;
+}
+
+.weui-panel .weui-media-box__bd {
+  flex:1;
+}
+
+.weui-panel .weui-media-box__desc {
+  margin-top: 20rpx;
+}
+
+.weui-panel .weui-media-box__desc .number {
+  margin-left: 100rpx;
+}
+
+.weui-media-box__thumb {
+  width:160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+
+.chooseHow {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom:20rpx;
+  margin: 0 10rpx;
+}
+
+.chooseHow .section {
+  padding-left: 15px;
+}
+
+.totalPrice {
   background-color: #ad0e11;
-}
-
-.receiveDetailBlockBtn text {
-  margin-right: 64rpx;
-}
-
-.receiveDetailList {
-  margin-bottom: 84rpx;
+  width:100%;
+  font-size: 30rpx;
+  color: #fff;
+  border:0;
+  border-radius: 0;
+  text-align: center;
+  padding: 10rpx 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
