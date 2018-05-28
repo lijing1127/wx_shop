@@ -5,191 +5,289 @@ Page({
     shopData: {
       img: "../../../images/capital-1.jpg", name: '深圳市龙岗区天水益茶烟酒商行', address: "深圳市龙岗区街道南联社区二村北坡二巷一号101"
     },//店铺信息
-    showModal: false,//是否展示模态框
     quota: 1000,//领配额
-    totalPrice: 0,//选择领配产品的总额
-    backgroundColor: '#d9d9d9',
-    showText: "请选择",
+    // backgroundColor: '#d9d9d9',
+    // showText: "请选择",
     go: false,
-
-    cateItems: [
+    goods: [
       {
-        cate_id: 1,
-        cate_name: "特医食品",
-        ishaveChild: true,
-        children:
-        [
+        "name": "特医食品",
+        "type": -1,
+        "foods": [
           {
-            child_id: 1,
-            name: 'L-阿拉伯糖（体验装）',
-            price:'960.0',
-            image: "../../../images/L-alabo.png",
-            num:0
+            "name": "阿拉伯糖（体验装）",
+            "price": 96.0,
+            "match": 96.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 2,
-            name: '阿拉伯糖（体验装）',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "阿拉伯糖",
+            "price": 960.0,
+            "match": 960.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 3,
-            name: '萨奇母婴饮用水',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "萨奇饮用水",
+            "price": 240.0,
+            "match": 240.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 4,
-            name: '萨奇饮用水',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
-          }
+            "name": "萨奇母婴饮用水",
+            "price": 450.0,
+            "match": 450.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
+          },
         ]
       },
       {
-        cate_id: 2,
-        cate_name: "功能农副",
-        ishaveChild: true,
-        children:
-        [
+        "name": "功能农副",
+        "type": 2,
+        "foods": [
           {
-            child_id: 1,
-            name: 'L-阿拉伯糖（体验装）',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "萨奇饮用水",
+            "price": 450.0,
+            "match": 450.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 2,
-            name: '萨奇母婴',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "萨奇母婴饮用水",
+            "price": 450.0,
+            "match": 450.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 3,
-            name: '阿拉伯糖（体验装）',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "阿拉伯糖（体验装）",
+            "price": 96.0,
+            "match": 96.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 4,
-            name: '萨奇母婴饮用水',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
-          }
+            "name": "阿拉伯",
+            "price": 960.0,
+            "match": 960.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
+          },
         ]
       },
       {
-        cate_id: 3,
-        cate_name: "优质保健",
-        ishaveChild: true,
-        children:
-        [
+        "name": "优质保健",
+        "type": 3,
+        "foods": [
           {
-            child_id: 1,
-            name: 'L-阿拉伯糖（体验装）',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "萨奇饮用水",
+            "price": 450.0,
+            "match": 450.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 2,
-            name: '阿拉伯糖（体验装）',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "萨奇母婴饮用水",
+            "price": 450.0,
+            "match": 450.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 3,
-            name: '萨奇母婴饮用水',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
+            "name": "阿拉伯糖（体验装）",
+            "price": 96.0,
+            "match": 96.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
           },
           {
-            child_id: 4,
-            name: '阿拉伯糖（体验装）',
-            price: '960.0',
-            image: "../../../images/L-alabo.png",
-            num: 0
-          }
+            "name": "阿拉伯",
+            "price": 960.0,
+            "match": 960.0,
+            "Count": 0,
+            "image": "../../../images/L-alabo.png",
+          },
         ]
-      }
+      },
     ],
-    curNav: 1,
-    curIndex: 0,
+    toView: '0',
+    scrollTop: 100,
+    foodCounts: 0,
+    totalPrice: 0,// 总价格  
+    totalMatch: 0,//总配领值
+    totalCount: 0, // 总商品数  
+    carArray: [],
+    minPrice: 15,//起送價格  
+    payDesc: '请选择',
+    fold: true,
+    selectFoods: [{ price: 20, count: 2 }],
+    cartShow: 'none',
+    status: 0,
+    url: "",
+    showPopup: false,
   },
-  // addClick: function (e) {
-  //   console.log(e)
-  //   const index = e.currentTarget.dataset.index;
-  //   const id = e.currentTarget.dataset.id;
-  //   console.log(id)
-  //   let goods = this.data.goods;
-  //   console.log(goods)
-  //   // var num = this.data.cart.list[id] || 0;
-  //   // this.data.cart.list[id] = num + 1;
-  //   // this.countCart();
-  // },
-
-  //模态框点击展示功能
-  preventTouchMove: function () {
-  },
-
-  showDetail() {
+  selectMenu: function (e) {
+    var index = e.currentTarget.dataset.itemIndex;
     this.setData({
-      showModal: true
+      toView: 'order' + index.toString()
+    })
+    // console.log(this.data.toView);
+  },
+  //移除商品  
+  decreaseCart: function (e) {
+    var index = e.currentTarget.dataset.itemIndex;
+    var parentIndex = e.currentTarget.dataset.parentindex;
+    this.data.goods[parentIndex].foods[index].Count--
+    var name = this.data.goods[parentIndex].foods[index].name;
+    var num = this.data.goods[parentIndex].foods[index].Count;
+    var mark = 'a' + index + 'b' + parentIndex
+    var price = this.data.goods[parentIndex].foods[index].price;
+    var match = this.data.goods[parentIndex].foods[index].match;
+    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, parentIndex: parentIndex };
+    var carArray1 = this.data.carArray.filter(item => item.mark != mark);
+    carArray1.push(obj);
+    // console.log(carArray1);
+    for (var m = 0; m < carArray1.length; m++) {
+      if (carArray1[m].num == 0) {
+        carArray1.splice(m, 1);  // splice(a,b); a需要删除的位置,b删除几个  
+      }
+    }
+    this.setData({
+      carArray: carArray1,
+      goods: this.data.goods
+    })
+    this.calTotalPrice();
+    this.setData({
+      payDesc: this.payDesc(),
+    })
+    //关闭弹起  
+    var count1 = 0
+    for (let i = 0; i < carArray1.length; i++) {
+      if (carArray1[i].num == 0) {
+        count1++;
+      }
+    }
+    //console.log(count1)  
+    if (count1 == carArray1.length) {
+      if (num == 0) {
+        this.setData({
+          cartShow: 'none'
+        })
+      }
+    }
+  },
+  decreaseShopCart: function (e) {
+    console.log('1');
+    this.decreaseCart(e);
+  },
+  //添加到购物车  
+  addCart(e) {
+    var index = e.currentTarget.dataset.itemIndex;
+    var parentIndex = e.currentTarget.dataset.parentindex;
+    this.data.goods[parentIndex].foods[index].Count++;
+    var mark = 'a' + index + 'b' + parentIndex
+    var price = this.data.goods[parentIndex].foods[index].price;
+    var match = this.data.goods[parentIndex].foods[index].match;
+    var num = this.data.goods[parentIndex].foods[index].Count;
+    var name = this.data.goods[parentIndex].foods[index].name;
+    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, parentIndex: parentIndex };
+    var carArray1 = this.data.carArray.filter(item => item.mark != mark)
+    carArray1.push(obj);
+    this.setData({
+      carArray: carArray1,
+      goods: this.data.goods
+    })
+    this.calTotalPrice();
+    this.setData({
+      payDesc: this.payDesc()
+    })
+  },
+  addShopCart: function (e) {
+    this.addCart(e);
+  },
+  //计算总价  
+  calTotalPrice: function () {
+    var carArray = this.data.carArray;
+    var totalPrice = 0;
+    var totalMatch = 0;
+    var totalCount = 0;
+    for (var i = 0; i < carArray.length; i++) {
+      totalPrice += carArray[i].price * carArray[i].num;
+      totalMatch += carArray[i].match * carArray[i].num;
+      totalCount += carArray[i].num
+    }
+    this.setData({
+      totalPrice: totalPrice,
+      totalMatch: totalMatch,
+      totalCount: totalCount,
+      payDesc: this.payDesc()
     });
   },
-
-  hideDetail() {
-    this.setData({
-      showModal: false
-    });
+  //差几元起送  
+  payDesc() {
+    if (this.data.totalPrice === 0 && this.data.totalMatch === 0) {
+      // return `￥${this.data.minPrice}元起送`;
+      return '请选择';
+    } else if (this.data.totalPrice < this.data.minPrice) {
+      let diff = this.data.minPrice - this.data.totalPrice;
+      return '还差' + diff + '元起送';
+    } else {
+      return '去结算';
+    }
   },
 
-  //比较领配额和选中产品的价格的大小出现不同的状态
-  comparAmount() {
-    let quota = this.data.quota;
-    let totalPrice = Number(this.data.totalPrice);
-    this.getTotalPrice();
-    if (quota < totalPrice) {
+  //购物车  
+  toggleList: function () {
+    if (!this.data.totalCount) {
+      return;
+    }
+    this.setData({
+      fold: !this.data.fold,
+    })
+    var fold = this.data.fold
+    //console.log(this.data.fold);  
+    this.cartShow(fold)
+  },
+  cartShow: function (fold) {
+    // console.log(fold);
+    if (fold == false) {
       this.setData({
-        backgroundColor: '#d9d9d9',
-        showText: "超出额度",
-      })
-    } else if (totalPrice == 0) {
-      this.setData({
-        backgroundColor: '#d9d9d9',
-        showText: "请选择"
+        cartShow: 'block',
       })
     } else {
       this.setData({
-        backgroundColor: '#ad0e11',
-        showText: "平行领配",
-        go: true
+        cartShow: 'none',
       })
-
     }
+    // console.log(this.data.cartShow);
   },
-  onLoad: function (options) {
-  },
-  switchRightTab: function (e) {
-    // 获取item项的id，和数组的下标值  
-    let id = e.target.dataset.id,
-      index = parseInt(e.target.dataset.index);
-    // 把点击到的某一项，设为当前index  
+  /**    
+  * 预览图片   
+  */
+  togglePopup: function (event) {
+    var image_path = event.currentTarget.dataset.id;
     this.setData({
-      curNav: id,
-      curIndex: index
-    })
+      url: image_path,
+      showPopup: !this.data.showPopup
+    });
   },
 
+  tabChange: function (e) {
+    var showtype = e.target.dataset.type;
+    this.setData({
+      status: showtype,
+    });
+  },
+
+  onLoad: function (options) {
+    // 页面初始化 options为页面跳转所带来的参数  
+    this.setData({
+      payDesc: this.payDesc()
+    });
+  },
   //平行领配跳转页面
   receiveDetail: function () {
     if (this.go) {

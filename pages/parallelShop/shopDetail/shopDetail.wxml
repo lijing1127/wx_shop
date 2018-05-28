@@ -15,116 +15,119 @@
   </view>
   <!-- 领配产品 -->
   <view class="weuiTitle weui-panel__hd">领配产品</view>
-   <view class="contain">
-    <!--左侧栏-->
-    <view class="nav_left">
-      <block wx:for="{{cateItems}}" wx:key="{{cateItems.cate_id}}">
-        <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
-      </block>
-    </view>
-    <!--右侧栏-->
-    <view class="nav_right">
-      <!--如果有数据，才遍历项-->
-      <view class="secndClass">二级分类{{cateItems.cate_name}}</view>
-      <view wx:if="{{cateItems[curIndex].ishaveChild}}">
-      <view>{{cateItems.cate_name}}</view>
-        <block wx:for="{{cateItems[curIndex].children}}" wx:key="{{item.id}}">
-          <view class="weui-panel__bd">
-            <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb proimage" src="{{item.image}}" mode="aspectFit" bindtap="showDetail" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">{{item.name}}</view>
-                <view class="cont">
-                  <view class="proprice">{{item.price}}</view>
-                  <view class="gw_num">
-                    <text class="cut cut1" bindtap="cutClick" data-index="{{index}}">-</text>
-                    <text class="num">{{item.num}}</text>
-                    <text class="add add1" bindtap="addClick" data-index="{{index}}">+</text>
-                  </view>
-                </view>
-              </view>
-            </view>
+  <view class="goods" wx:if="{{status==0||item.status==status}}">
+    <view class="menu-wrapper">
+      <scroll-view scroll-y="true" style="height: 450px;">
+        <view wx:for="{{goods}}" class="menu-item border-1px" bindtap="selectMenu" data-item-index="{{index}}" wx:key="key">
+          <view class="text">
+            {{item.name}}
           </view>
-        </block>
-      </view>
-      <!--如果无数据，则显示数据-->
-      <view class="nodata_text" wx:else>该分类暂无数据</view>
+        </view>
+      </scroll-view>
     </view>
-  </view>
-
-
-  <view class="cart">
-    <view class="data weui-media-box weui-media-box_appmsg" bindtap="showCartDetail">
-      <view class="icon">
-        <image class='weui-media-box__thumb' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN7SURBVGhD3ZlLSFVRGIVNLYywNAdNGhQmEhJhjYSoSQ+iF9QsQgcWpUQEogOpkUWICBISBBVSlEUQEQ6CIJDoRQ9qYIOkQS+IHpZhKqn39v2XdS/K1R6efY5398Fi37P2cf3/9tzjeZj1XxCPx/NQ4W+Uq10zj1gsVoOGaHJKmB9EXahcP5Y50FSf+rRGBxgejxdeDxrks83/QBX60cyAhp5bcwafz8qeAFNzmGvRPj0MszQ189BQCQ11MLahhbLTsKaZf6pFrJPtFzReqwW0yfILGl+mBTyT5R80/w6NoSJZfkHjF3UUdsjyCxrfpwV4ex6UagFenwfv0RjrKJTlFzTfqaPg7XlwQAvoRbci1k20Xa1MDwKW2wJmCupfUCvTh5APyluPVkchaiZvZbapjelDyBWFBTucfwl1FiO7gNovLvjzCUE1WkCrrFChTqPqtcgKBkFlCnwiKzQoY3fCL1WvTHYwFPoRjfK5QHYokL9GzT+U5QYCryp4q6xQIP+M6tTIcgOBBxXs5ns5CWTPQ9+RPbe7vfITukILeCTLOWRXqkanLHeQa+fBJzSK5st2CrndWsAmWW4h+JoKbJHlDDKLkfGWEtmy3UL4IS2gWZYzyGxS9nFZ7iF8pYo4/RNHZDaZr5FRIts9KvQFjaB82YEha4N+MXdkhQdFrqvYZlmBISv57F0tKzwocljFTsgKBFELyLL3sQPI2VGdEoqUawH3ZQWCnP2WBx2ywoVCdh70ITsPTjvQK+ueca1KhA/FblhRV5D3giG6l8gUrFPhywz2lBZI5CxSdDRQ1B77bAHdsvyC3nPQNxYwjObK9gsaT5wHjBtl+QWN79UCzsvyC3ovQPY1srcH9Wgp25n7H87JoOldaMSORFDIcXJh/GcoXKUerAm7JYhp07a/IrvojVe/pm3eHo4S//Zl/MmwRLHRQeHbaqCBwa7S9lLKLkzmpd3w4VVr7i4q4mMuY6u8S9otGlR8CH2WlYDtxP0NY9rDCd45zaVeGbKZx7adS29kRQdF7S5ymCZSbxHYPqYmG2WlwGvXXK0s84rl9cqKDoqeUvEHaDc6iuyo2PlQrN1S4FUg++73ozq0B9k/1C3jiHaLDormo3vWQBK2bQFV2iUN5hrQhL9ebHcxzNYu0ULhHBqoRO2oCZVqakrYZxVqRifRTjL+cDealfULnT/DhHiwlCQAAAAASUVORK5CYII="/>
-        <view class="count">{{cart.count}}</view>
-      </view>
-      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-        <text class="weui-media-box__title">总价：{{totalPrice}}</text>
-        <text class="weui-media-box__desc">总配领值：{{totalPrice}}</text>
-      </view>
-    </view>
-    <form bindsubmit="submit" report-submit="true">
-      <!--<view formType="submit" class="submit">去结算</view>-->
-      <button class="parallelColler" style="background:{{backgroundColor}}" bindtap='receiveDetail'>{{showText}}</button>
-      <!-- <button class="yellow {{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}">{{showText}}</button> -->
-    </form>
-  </view>
-
-  <!-- <view class="contain">
-    
-    <view class="nav_left">
-      <block wx:for="{{navList}}" wx:key="key">
-        <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
-      </block>
-    </view>
-
-    <view class="nav_right">
-      <block wx:for="{{proList}}" wx:key="{{item.id}}">
-        <view class="weui-panel__bd">
-          <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-              <image class="weui-media-box__thumb proimage" src="{{item.image}}" mode="aspectFit" bindtap="showDetail" />
+    <scroll-view scroll-y="true" scroll-into-view="{{toView}}" class="foods-wrapper">
+      <view wx:for="{{goods}}" class="food-list food-list-hook" wx:for-index="parentIndex" wx:key="key">
+        <view id="order{{parentIndex}}" class="title">{{item.name}}</view>
+        <view wx:for="{{item.foods}}" class="food-item" wx:for-item="food" data-food="{{food}}" wx:key="key">
+          <view class="icon">
+            <image src="{{food.image}}" style="width: 57px;height: 57px" data-id="{{food.image}}" bindtap="togglePopup"></image>
+          </view>
+          <view class="content">
+            <view class="name">{{food.name}}</view>
+            <view class="price">
+              <view class="now">￥{{food.price}}</view>
+              <view class="now">配领值 {{food.match}}</view>
             </view>
-            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-              <view class="weui-media-box__title">{{item.name}}</view>
-              <view class="cont">
-                <view class="proprice">{{item.price}}</view>
-                <view class="gw_num">
-                  <text class="cut cut1" bindtap="cutClick" data-index="{{index}}" data-id="{{item.id}}">-</text>
-                  <text class="num">{{item.num}}</text>
-                  <text class="add add1" bindtap="addClick" data-index="{{index}}" data-id="{{item.id}}">+</text>
+
+            <!--cartControl-->
+            <view class="cartControl-wrapper">
+              <view class="cartControl">
+                <view name="fade">
+                  <view class="cart-decrease" wx:if="{{food.Count > 0}}" data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="decreaseCart">
+                    <view class="inner iconfont icon-jian" style="font-size:24px;color:#ad0e11;"></view>
+                  </view>
+                  <view class="cart-count" wx:if="{{food.Count > 0 }}">{{food.Count}}</view>
+                  <view class=" iconfont icon-jia cart-add " style="color:#ad0e11; " data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="addCart"></view>
                 </view>
               </view>
             </view>
           </view>
         </view>
-      </block>
-    </view>
-  </view> -->
-  <!-- 产品详情 -->
-  <!-- <view class="proDetail " wx:if="{{showModal}}">
-    <view>规格：20ml*20支/盒</view>
-    <view>包装：20ml*20支/盒</view>
-    <view>简介：调血糖 优化肠道菌群 活力肠道 排毒养颜 降血压</view>
-    <button plain='true' bindtap='hideDetail'>关闭</button>
-  </view> -->
+      </view>
+    </scroll-view>
 
-  <!-- <view class="bottomPosition">
-    <view class="weui-media-box weui-media-box_appmsg">
-      <view class="image">
-        <image class='weui-media-box__thumb' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGgSURBVGhD7ZY/SsZAEEeDYifoCWw8gAfQxtY/WFnoIRTxBKKghYewsrZX9A42nkEEEbEQG30DFsMy4ctONrv7feTBK4eZTeaXTQO/HbzDarEGDn3HOawSa2DLNawSa1jLY5wqZGB9gKpzYCErow9QdQ4sZFgZWh+i2hy0IWujDzDmIDdjDmpgzEFpxhzUwMzloBYPsBNhDmrwB5ewE1YOSnuPUYQ5KO0RRlHyPljEb9T9VzCKkvfBPurezxhNyfvgBnXfS3RR4j6YxzfUfdfRRYkcbKDu+Yru1S2RgyvUPWWd3JTIwQvqfhLoXuTMwSrqXlG3bxs5c3CCutcj9iZnDmRg3esUe5MrB8soK6P7yEolIUcODlH3kDAnI8xBDq8xGWEOcriJybByMKQfuIBJCXMwpLc4MvPs4RN+/SuX0C5OwluXlAu0dlc8xza8dUmRp2UNoN3BEG9dcuT1W8211k+Yty45srdWc+0nhnjrkjP1Bwh/eS2tVfDWJadLGLcxxFs3CPLJswYQz7ANb90gyCdPXrnsrfiAWzgJbx00zR9LrluZmwZiqAAAAABJRU5ErkJggg=="
-        />
-      
-        <text class='text'>{{cartTotal}}</text>
+    <!--shopCart-->
+    <view>
+      <view>
+        <view class="shopCart">
+          <view class="content" bindtap="toggleList">
+            <view class="content-left">
+              <view class="logo-wrapper">
+                <view class="logo highlight">
+                  <view class="iconfont icon-gouwuche highlight"></view>
+                </view>
+                <view class="num" wx:if="{{totalCount> 0}}">{{totalCount}}</view>
+              </view>
+              <view class="price highlight">总价：￥{{totalPrice}}</view>
+              <view class="match">总配领值：{{totalMatch}}</view>
+            </view>
+            <view class="content-right" catchtap="pay">
+              <view class="pay enough" :class="payClass">
+                {{payDesc}}
+              </view>
+            </view>
+          </view>
+          <view class="shopcart-list" style="display:{{cartShow}}">
+            <view class="list-header">
+              <view class="title">购物车</view>
+              <text class="empty" bindtap="empty">清空</text>
+            </view>
+
+            <view class="list-content">
+              <scroll-view scroll-y style="height: 200px;">
+
+                <view class="shopcart-food" wx:for="{{carArray}}" wx:key="key">
+                  <text class="name">{{item.name}}</text>
+                  <view class="price" wx:if="{{item.num > 0}}">
+                    <span>￥{{item.price*item.num}}</span>
+                    <span>　</span>
+                    <span>配领值：{{item.match*item.num}}</span>
+                  </view>
+
+                  <!--cartControl-->
+                  <view class="cartControl-wrapper" style="bottom:10px;" wx:if="{{item.num > 0}}">
+                    <view class="cartControl" style="width:80px;">
+                      <view name="fade">
+                        <view class="cart-decrease" style="display:inline-block;" data-item-index="{{item.index}}" data-parentIndex="{{item.parentIndex}}" catchtap="decreaseShopCart">
+                          <view class="inner iconfont icon-jian" style="font-size:24px;color:#ad0e11;"></view>
+                        </view>
+                        <view class="cart-count" style="display:inline-block;width:32px;text-align:center;font-size:14px;">{{item.num}}</view>
+                        <view class=" iconfont icon-jia cart-add " style="font-size:24px;color:#ad0e11; padding:0;" data-item-index="{{item.index}}" data-parentIndex="{{item.parentIndex}}" catchtap="addShopCart"></view>
+                      </view>
+                    </view>
+                  </view>
+                  <!--cartControl-->
+                </view>
+              </scroll-view>
+
+            </view>
+
+
+          </view>
+        </view>
       </view>
-      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-        <text class="weui-media-box__title">总价：{{totalPrice}}</text>
-        <text class="weui-media-box__desc">总配领值：{{totalPrice}}</text>
-      </view>
-      <button class="parallelColler" style="background:{{backgroundColor}}" bindtap='receiveDetail'>{{showText}}</button>
     </view>
-  </view> -->
+    <view name="fade">
+      <view class="list-mask" wx:if="{{listShow}}" bindtap="hideList"></view>
+    </view>
+  </view>
+
+  <view class="zan-popup {{ showPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" bindtap="togglePopup"></view>
+    <view class="zan-popup__container popup-example--center">
+      <view class="zan-btns">
+        <image src='{{url}}'></image>
+      </view>
+    </view>
+  </view>
 </view>
