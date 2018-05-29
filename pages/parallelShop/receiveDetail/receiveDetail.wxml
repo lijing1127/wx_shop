@@ -5,7 +5,7 @@
     <text class="weui-media-box__title">收货人：{{consignee}}</text>
     <view class="weui-media-box__desc">联系电话：{{userPhone}}</view>
     <view class="weui-media-box__desc">收货地址：{{receivingAddress}}</view>
-    <navigator class='chooseAddress'>修改收货地址</navigator>
+    <navigator url='../reAddress/reAddress' class='chooseAddress'>修改收货地址</navigator>
   </view>
 
   <!-- 产品列表 -->
