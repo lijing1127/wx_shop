@@ -24,24 +24,24 @@ App({
                   console.log(res.encryptedData);
                   console.log(res.iv);
                   console.log(code);
-                  wx.request({
-                    url: 'http://192.168.1.235:3000/user/get_session_info',
-                    data: {
-                      code: code,
-                      encryptedData: res.encryptedData,
-                      iv: res.iv
-                    },
-                    success: function (res) {
-                      // 根据后台返回的信息，跳转不同的页面，1表示该用户是平行店的管理员
-                      if (res.data == 1) {
-                        console.log("请求成功");
-                        that.globalData.has_parallel_shop = true;
-                      } else {
-                        console.log("请求失败");
-                        that.globalData.has_parallel_shop = false;
-                      }
-                    }
-                  })
+                  // wx.request({
+                  //   url: 'http://192.168.1.235:3000/user/get_session_info',
+                  //   data: {
+                  //     code: code,
+                  //     encryptedData: res.encryptedData,
+                  //     iv: res.iv
+                  //   },
+                  //   success: function (res) {
+                  //     // 根据后台返回的信息，跳转不同的页面，1表示该用户是平行店的管理员
+                  //     if (res.data == 1) {
+                  //       console.log("请求成功");
+                  //       that.globalData.has_parallel_shop = true;
+                  //     } else {
+                  //       console.log("请求失败");
+                  //       that.globalData.has_parallel_shop = false;
+                  //     }
+                  //   }
+                  // })
 
                   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                   // 所以此处加入 callback 以防止这种情况
@@ -55,11 +55,11 @@ App({
         })
       }
     })
-
-
   },
   globalData: {
     userInfo: null,
     has_parallel_shop: true,
+    token: null,
+    id: null
   }
 })
