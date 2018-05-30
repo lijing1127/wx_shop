@@ -1,18 +1,28 @@
 /* pages/register/register.wxss */
 
-.registerBlockMargin {
-   margin-top: 50rpx; 
+page {
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
+}
+.register{
+  font-size: 32rpx;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.registerBlockBtn{
+  width: 90%;
+  margin-left: 5%;
 }
 
 .registerBlockBtn, .registerBlockBtn>button {
   background-color: #ad0e11;
   color: #fff;
-}
-
-.registerBlockBtn, .registerBlockBtn>button {
-  background-color: #999;
+  margin-top: 20%;
+  border-radius: 10rpx;
 }
 
 .weui-vcode-btn, .weui-vcode-btn:hover {
   color: #cc6862;
 }
+
