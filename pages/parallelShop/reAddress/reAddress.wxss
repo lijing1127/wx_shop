@@ -1,0 +1,53 @@
+/* pages/parallelShop/reAddress/reAddress.wxss */
+
+.radio-group {
+  margin-top: 20rpx;
+}
+
+.radio {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding:20rpx;
+  border-bottom:1px dashed #ddd;
+}
+
+.infoName {
+  margin-left: 15rpx;
+  font-size: 28rpx;
+  color: #ad0e11;
+}
+
+.infoPhone {
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.infoBottom {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #666;
+  word-wrap:break-word;
+}
+
+.bottomBtn {
+  display: flex;
+  position: fixed;
+  width:100%;
+  bottom: 0;
+  left: 0;
+  border-top:1px solid #ddd;
+}
+
+.bottomBtn button {
+  flex: 1;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+}
+
+.bottomBtn .editBtn {
+  background: #ad0e11;
+  color: #fff;
+}

@@ -1,0 +1,18 @@
+<!--pages/parallelShop/reAddress/reAddress.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <!-- 循环展示地址 -->
+  <radio-group class="radio-group" name="radio-addr">
+    <label class="radio" wx:for="{{items}}">
+      <radio value="{{item.id}}" checked="{{item.checked}}" />
+      <text class='infoName'>{{item.name}}</text><text class='infoPhone'>{{item.phone}}</text>
+      <view class='infoBottom'>{{item.address}}</view>
+    </label>
+  </radio-group>
+
+  <!-- 底部按钮 -->
+  <view class='bottomBtn'>
+    <button plain='true'>添加地址</button>
+    <button plain='true' class='editBtn' formType="submit">确认修改</button>
+  </view>
+
+</form>
