@@ -9,107 +9,91 @@ Page({
     // backgroundColor: '#d9d9d9',
     // showText: "请选择",
     go: false,
-    goods: [
+    classify: [
       {
         "name": "特医食品",
+        "firstId": 1,
         "type": -1,
-        "foods": [
+        "secClass": [
           {
-            "name": "阿拉伯糖（体验装）",
-            "price": 96.0,
-            "match": 96.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
+            "name": "teyide teyi",
+            "secondId": 11,
+            "product": [
+              {
+                "name": "阿拉伯糖（体验装）",
+                "price": 96.0,
+                "match": 96.0,
+                "Count": 0,
+                "image": "../../../images/L-alabo.png",
+                "productId": 111,
+              },
+              {
+                "name": "阿拉伯糖（体验装）",
+                "price": 96.0,
+                "match": 96.0,
+                "Count": 0,
+                "image": "../../../images/L-alabo.png",
+                "productId": 112,
+              }
+            ]
           },
           {
-            "name": "阿拉伯糖",
-            "price": 960.0,
-            "match": 960.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-          {
-            "name": "萨奇饮用水",
-            "price": 240.0,
-            "match": 240.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-          {
-            "name": "萨奇母婴饮用水",
-            "price": 450.0,
-            "match": 450.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
+            "name": "teyide teyi2",
+            "secondId": 12,
+            "product": [
+              {
+                "name": "阿拉伯糖（体验装）",
+                "price": 96.0,
+                "match": 96.0,
+                "Count": 0,
+                "image": "../../../images/L-alabo.png",
+                "productId": 121,
+              }
+            ]
+          }
         ]
       },
       {
-        "name": "功能农副",
-        "type": 2,
-        "foods": [
+        "name": "特医食品123",
+        "firstId": 1,
+        "type": -1,
+        "secClass": [
           {
-            "name": "萨奇饮用水",
-            "price": 450.0,
-            "match": 450.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
+            "name": "teyide teyi",
+            "secondId": 11,
+            "product": [
+              {
+                "name": "阿拉伯糖（体验装）",
+                "price": 96.0,
+                "match": 96.0,
+                "Count": 0,
+                "image": "../../../images/L-alabo.png",
+                "productId": 111,
+              },
+              {
+                "name": "阿拉伯糖（体验装）",
+                "price": 96.0,
+                "match": 96.0,
+                "Count": 0,
+                "image": "../../../images/L-alabo.png",
+                "productId": 112,
+              }
+            ]
           },
           {
-            "name": "萨奇母婴饮用水",
-            "price": 450.0,
-            "match": 450.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-          {
-            "name": "阿拉伯糖（体验装）",
-            "price": 96.0,
-            "match": 96.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-          {
-            "name": "阿拉伯",
-            "price": 960.0,
-            "match": 960.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-        ]
-      },
-      {
-        "name": "优质保健",
-        "type": 3,
-        "foods": [
-          {
-            "name": "萨奇饮用水",
-            "price": 450.0,
-            "match": 450.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-          {
-            "name": "萨奇母婴饮用水",
-            "price": 450.0,
-            "match": 450.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-          {
-            "name": "阿拉伯糖（体验装）",
-            "price": 96.0,
-            "match": 96.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
-          {
-            "name": "阿拉伯",
-            "price": 960.0,
-            "match": 960.0,
-            "Count": 0,
-            "image": "../../../images/L-alabo.png",
-          },
+            "name": "teyide teyi2",
+            "secondId": 12,
+            "product": [
+              {
+                "name": "阿拉伯糖（体验装）",
+                "price": 96.0,
+                "match": 96.0,
+                "Count": 0,
+                "image": "../../../images/L-alabo.png",
+                "productId": 121,
+              }
+            ]
+          }
         ]
       },
     ],
@@ -139,14 +123,15 @@ Page({
   //移除商品  
   decreaseCart: function (e) {
     var index = e.currentTarget.dataset.itemIndex;
-    var parentIndex = e.currentTarget.dataset.parentindex;
-    this.data.goods[parentIndex].foods[index].Count--
-    var name = this.data.goods[parentIndex].foods[index].name;
-    var num = this.data.goods[parentIndex].foods[index].Count;
-    var mark = 'a' + index + 'b' + parentIndex
-    var price = this.data.goods[parentIndex].foods[index].price;
-    var match = this.data.goods[parentIndex].foods[index].match;
-    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, parentIndex: parentIndex };
+    var firstIndex = e.currentTarget.dataset.firstindex;
+    var secondIndex = e.currentTarget.dataset.secondindex;
+    this.data.classify[firstIndex].secClass[secondIndex].product[index].Count--;
+    var mark = 'a' + index + 'b' + firstIndex + 'c' + secondIndex;
+    var price = this.data.classify[firstIndex].secClass[secondIndex].product[index].price;
+    var match = this.data.classify[firstIndex].secClass[secondIndex].product[index].match;
+    var num = this.data.classify[firstIndex].secClass[secondIndex].product[index].Count;
+    var name = this.data.classify[firstIndex].secClass[secondIndex].product[index].name; 
+    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, firstIndex: firstIndex, secondIndex: secondIndex};
     var carArray1 = this.data.carArray.filter(item => item.mark != mark);
     carArray1.push(obj);
     // console.log(carArray1);
@@ -157,7 +142,7 @@ Page({
     }
     this.setData({
       carArray: carArray1,
-      goods: this.data.goods
+      classify: this.data.classify
     })
     this.calTotalPrice();
     this.setData({
@@ -186,19 +171,22 @@ Page({
   //添加到购物车  
   addCart(e) {
     var index = e.currentTarget.dataset.itemIndex;
-    var parentIndex = e.currentTarget.dataset.parentindex;
-    this.data.goods[parentIndex].foods[index].Count++;
-    var mark = 'a' + index + 'b' + parentIndex
-    var price = this.data.goods[parentIndex].foods[index].price;
-    var match = this.data.goods[parentIndex].foods[index].match;
-    var num = this.data.goods[parentIndex].foods[index].Count;
-    var name = this.data.goods[parentIndex].foods[index].name;
-    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, parentIndex: parentIndex };
+    var firstIndex = e.currentTarget.dataset.firstindex;
+    var secondIndex = e.currentTarget.dataset.secondindex;
+    this.data.classify[firstIndex].secClass[secondIndex].product[index].Count++;
+    var mark = 'a' + index + 'b' + firstIndex + 'c' + secondIndex;
+    console.log(mark);
+    var price = this.data.classify[firstIndex].secClass[secondIndex].product[index].price;
+    var match = this.data.classify[firstIndex].secClass[secondIndex].product[index].match;
+    var num = this.data.classify[firstIndex].secClass[secondIndex].product[index].Count;
+    var name = this.data.classify[firstIndex].secClass[secondIndex].product[index].name;
+    console.log(name)
+    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, firstIndex: firstIndex, secondIndex: secondIndex };
     var carArray1 = this.data.carArray.filter(item => item.mark != mark)
     carArray1.push(obj);
     this.setData({
       carArray: carArray1,
-      goods: this.data.goods
+      classify: this.data.classify
     })
     this.calTotalPrice();
     this.setData({
@@ -263,16 +251,6 @@ Page({
       })
     }
     // console.log(this.data.cartShow);
-  },
-  /**    
-  * 预览图片   
-  */
-  togglePopup: function (event) {
-    var image_path = event.currentTarget.dataset.id;
-    this.setData({
-      url: image_path,
-      showPopup: !this.data.showPopup
-    });
   },
 
   tabChange: function (e) {

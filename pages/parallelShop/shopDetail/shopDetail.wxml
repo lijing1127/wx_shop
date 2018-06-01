@@ -14,40 +14,44 @@
     </view>
   </view>
   <!-- 领配产品 -->
-  <view class="weuiTitle weui-panel__hd">领配产品</view>
+  <view class="weuiTitle">配领产品</view>
   <view class="goods" wx:if="{{status==0||item.status==status}}">
+    <!--一级分类目录  -->
     <view class="menu-wrapper">
       <scroll-view scroll-y="true" style="height: 450px;">
-        <view wx:for="{{goods}}" class="menu-item border-1px" bindtap="selectMenu" data-item-index="{{index}}" wx:key="key">
+        <view wx:for="{{classify}}" class="menu-item border-1px" bindtap="selectMenu" data-item-index="{{index}}" wx:key="key">
           <view class="text">
             {{item.name}}
           </view>
         </view>
       </scroll-view>
     </view>
+    <!--二级分类产品列表  -->
     <scroll-view scroll-y="true" scroll-into-view="{{toView}}" class="foods-wrapper">
-      <view wx:for="{{goods}}" class="food-list food-list-hook" wx:for-index="parentIndex" wx:key="key">
-        <view id="order{{parentIndex}}" class="title">{{item.name}}</view>
-        <view wx:for="{{item.foods}}" class="food-item" wx:for-item="food" data-food="{{food}}" wx:key="key">
-          <view class="icon">
-            <image src="{{food.image}}" style="width: 57px;height: 57px" data-id="{{food.image}}" bindtap="togglePopup"></image>
-          </view>
-          <view class="content">
-            <view class="name">{{food.name}}</view>
-            <view class="price">
-              <view class="now">￥{{food.price}}</view>
-              <view class="now">配领值 {{food.match}}</view>
+      <view wx:for="{{classify}}" class="food-list food-list-hook" wx:for-index="firstIndex" wx:key="key">
+        <view id="order{{firstIndex}}" class="title adee">{{item.name}}</view>
+        <view wx:for="{{item.secClass}}" wx:for-index="secondIndex" wx:key="key">
+          <view class="title gray">{{item.name}}</view>
+          <view wx:for="{{item.product}}" class="food-item" wx:for-item="product" data-food="{{product}}" wx:key="key">
+            <view class="icon">
+              <image src="{{product.image}}" style="width: 57px;height: 57px" data-id="{{product.image}}"></image>
             </view>
-
-            <!--cartControl-->
-            <view class="cartControl-wrapper">
-              <view class="cartControl">
-                <view name="fade">
-                  <view class="cart-decrease" wx:if="{{food.Count > 0}}" data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="decreaseCart">
-                    <view class="inner iconfont icon-jian" style="font-size:24px;color:#ad0e11;"></view>
+            <view class="content">
+              <view class="name">{{product.name}}</view>
+              <view class="price">
+                <view class="now">￥{{product.price}}</view>
+                <view class="now">配领值 {{product.match}}</view>
+              </view>
+              <!--点击加号按钮的滑动-->
+              <view class="cartControl-wrapper">
+                <view class="cartControl">
+                  <view name="fade">
+                    <view class="cart-decrease" wx:if="{{product.Count > 0}}" data-item-index="{{index}}" data-secondIndex="{{secondIndex}}" data-firstIndex="{{firstIndex}}" catchtap="decreaseCart">
+                      <view class="inner iconfont icon-jian" style="font-size:24px;color:#ad0e11;"></view>
+                    </view>
+                    <view class="cart-count" wx:if="{{product.Count > 0 }}">{{product.Count}}</view>
+                    <view class=" iconfont icon-jia cart-add " style="color:#ad0e11; " data-item-index="{{index}}" data-secondIndex="{{secondIndex}}" data-firstIndex="{{firstIndex}}" catchtap="addCart"></view>
                   </view>
-                  <view class="cart-count" wx:if="{{food.Count > 0 }}">{{food.Count}}</view>
-                  <view class=" iconfont icon-jia cart-add " style="color:#ad0e11; " data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="addCart"></view>
                 </view>
               </view>
             </view>
@@ -56,21 +60,24 @@
       </view>
     </scroll-view>
 
-    <!--shopCart-->
+    <!--购物车-总价--固定底部横条-->
     <view>
       <view>
         <view class="shopCart">
           <view class="content" bindtap="toggleList">
             <view class="content-left">
-              <view class="logo-wrapper">
+              <view class="logo-wrapper ">
                 <view class="logo highlight">
                   <view class="iconfont icon-gouwuche highlight"></view>
                 </view>
                 <view class="num" wx:if="{{totalCount> 0}}">{{totalCount}}</view>
               </view>
-              <view class="price highlight">总价：￥{{totalPrice}}</view>
-              <view class="match">总配领值：{{totalMatch}}</view>
+              <view class='allPrice'>
+                <text class="weui-media-box__title">总价：￥{{totalPrice}}</text>
+                <text class="weui-media-box__desc">总配领值：{{totalMatch}}</text>
+              </view>
             </view>
+            <!--确认订单按钮  -->
             <view class="content-right" catchtap="pay">
               <view class="pay enough" :class="payClass">
                 {{payDesc}}
@@ -85,7 +92,6 @@
 
             <view class="list-content">
               <scroll-view scroll-y style="height: 200px;">
-
                 <view class="shopcart-food" wx:for="{{carArray}}" wx:key="key">
                   <text class="name">{{item.name}}</text>
                   <view class="price" wx:if="{{item.num > 0}}">
@@ -94,25 +100,22 @@
                     <span>配领值：{{item.match*item.num}}</span>
                   </view>
 
-                  <!--cartControl-->
+                  <!--购物车列表里 加减号操作-->
                   <view class="cartControl-wrapper" style="bottom:10px;" wx:if="{{item.num > 0}}">
                     <view class="cartControl" style="width:80px;">
                       <view name="fade">
-                        <view class="cart-decrease" style="display:inline-block;" data-item-index="{{item.index}}" data-parentIndex="{{item.parentIndex}}" catchtap="decreaseShopCart">
+                        <view class="cart-decrease" style="display:inline-block;" data-item-index="{{item.index}}" data-secondIndex="{{item.secondIndex}}" data-firstIndex="{{item.firstIndex}}" catchtap="decreaseShopCart">
                           <view class="inner iconfont icon-jian" style="font-size:24px;color:#ad0e11;"></view>
                         </view>
                         <view class="cart-count" style="display:inline-block;width:32px;text-align:center;font-size:14px;">{{item.num}}</view>
-                        <view class=" iconfont icon-jia cart-add " style="font-size:24px;color:#ad0e11; padding:0;" data-item-index="{{item.index}}" data-parentIndex="{{item.parentIndex}}" catchtap="addShopCart"></view>
+                        <view class=" iconfont icon-jia cart-add " style="font-size:24px;color:#ad0e11; padding:0;" data-item-index="{{item.index}}" data-secondIndex="{{item.secondIndex}}" data-firstIndex="{{item.firstIndex}}" catchtap="addShopCart"></view>
                       </view>
                     </view>
                   </view>
-                  <!--cartControl-->
+                  <!--加减号操作-->
                 </view>
               </scroll-view>
-
             </view>
-
-
           </view>
         </view>
       </view>

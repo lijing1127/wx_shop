@@ -10,13 +10,10 @@ page {
 }
 
 .weuiTitle {
-  font-size: 36rpx;
+  font-size: 16px;
+  font-weight: bold;
   color: #ad0e11;
-  padding: 16rpx 30rpx;
-}
-
-.weui-media-box__desc {
-  padding: 10rpx 0;
+  padding: 0 15px;
 }
 
 .weui-media-box__bd_in-appmsg {
@@ -24,10 +21,11 @@ page {
 }
 
 .goods {
+  
   display: flex;
   position: absolute;
   width: 100%;
-  top: 240rpx;
+  top: 120px;
   bottom: 46px;
   overflow: hidden;
   font-family: "微软雅黑";
@@ -88,8 +86,13 @@ page {
   line-height: 26px;
   border-left: 2px solid #d9dde1;
   font-size: 12px;
-  color: rgb(147, 153, 159);
   background: #f3f5f7;
+}
+.adee{
+  color: #ad0e11;
+}
+.gray{
+  color: rgb(147, 153, 159);
 }
 
 .goods .foods-wrapper .food-list .food-item {
@@ -135,11 +138,6 @@ page {
 
 .goods .foods-wrapper .food-list .food-item .content .extra .count {
   margin-right: 12px;
-}
-
-.goods .foods-wrapper .food-list .food-item .content .price {
-  font-weight: 700px;
-  line-height: 24px;
 }
 
 .goods .foods-wrapper .food-list .food-item .content .price .now {
@@ -526,9 +524,9 @@ page {
   right: 0;
 }
 
-.match {
+.allPrice {
   color: #333;
-  position: fixed;
-  bottom: 0;
-  left: 144rpx;
+  position: absolute;
+  bottom: 8rpx;
+  left: 85px;
 }
