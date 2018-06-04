@@ -1,5 +1,5 @@
 // pages/register/register.js
-var app = getApp() 
+var app = getApp(); 
 Page({
   data: {
     mobile:'',
@@ -18,7 +18,6 @@ Page({
 
   getVcode:function(){
     var mobile = this.data.mobile;
-    console.log(mobile)
     if (mobile.length == 0) {
       wx.showModal({
         title: '',
@@ -85,9 +84,16 @@ Page({
     var phone = e.detail.value.phone;
     var vCode = e.detail.value.vCode;
     if (phone == "" || vCode == "" || phone.length != 11 || vCode.length!=4){
-      console.log('121344')
+      console.log('')
     }else{
-      console.log(phone,vCode)
+      // var url = 'http://192.168.1.237:8000/api/v1/users/verify?telphone='+phone+'&verify_code='+vCode;
+      // app.httpClient.postApi(url)
+      // .then(res => {
+      //   console.log(res.data,'succ')
+      // })
+      // .catch(res => {
+      //   console.log(res.data,'fail')
+      // })
       wx.request({
         url: 'http://192.168.1.237:8000/api/v1/users/verify?telphone='+phone+'&verify_code='+vCode,
         method: 'POST',
@@ -97,7 +103,11 @@ Page({
         success: function (res) {
           var token = res.data.authentication_token;
           app.globalData.token = token;
-          if(app.globalData.token){
+          wx.setStorage({
+            key: "token",
+            data: app.globalData.token
+          })
+          if (app.globalData.token){
             wx.switchTab({
               url: '../parallelShop/index/index',
             })
