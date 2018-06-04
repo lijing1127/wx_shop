@@ -60,6 +60,24 @@ App({
     userInfo: null,
     has_parallel_shop: true,
     token: null,
-    id: null
-  }
+    hostUrl: 'http://192.168.1.237:8000/api/v1',
+  },
+  //全局封装requestAPI
+  clientFetch: function (url, method, resolve, reject) {
+    wx.request({
+      url: url,
+      method: method,
+      header: {
+        'content-type': 'application/json',
+        'access_token': this.globalData.token ? this.globalData.token : null,
+      },
+      success: function (res) {
+        resolve(res);
+      },
+      fail: function (res) {
+        reject(res);
+      }
+    })
+  },
 })
+
