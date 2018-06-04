@@ -39,8 +39,8 @@
             <view class="content">
               <view class="name">{{product.name}}</view>
               <view class="price">
-                <view class="now">￥{{product.price}}</view>
-                <view class="now">配领值 {{product.match}}</view>
+                <view class="fontS now">￥{{product.price}}</view>
+                <view class="fontS smallNow">配领值 {{product.match}}</view>
               </view>
               <!--点击加号按钮的滑动-->
               <view class="cartControl-wrapper">
@@ -94,11 +94,11 @@
               <scroll-view scroll-y style="height: 200px;">
                 <view class="shopcart-food" wx:for="{{carArray}}" wx:key="key">
                   <text class="name">{{item.name}}</text>
-                  <view class="price" wx:if="{{item.num > 0}}">
+                  <!-- <view class="price" wx:if="{{item.num > 0}}">
                     <span>￥{{item.price*item.num}}</span>
                     <span>　</span>
                     <span>配领值：{{item.match*item.num}}</span>
-                  </view>
+                  </view> -->
 
                   <!--购物车列表里 加减号操作-->
                   <view class="cartControl-wrapper" style="bottom:10px;" wx:if="{{item.num > 0}}">

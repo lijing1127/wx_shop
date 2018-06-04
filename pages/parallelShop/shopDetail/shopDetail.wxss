@@ -140,10 +140,15 @@ page {
   margin-right: 12px;
 }
 
-.goods .foods-wrapper .food-list .food-item .content .price .now {
+.goods .foods-wrapper .food-list .food-item .content .price .fontS {
   margin-right: 8px;
-  font-size: 14px;
   color: rgb(240, 20, 20);
+}
+.now{
+  font-size: 14px;  
+}
+.smallNow{
+  font-size: 22rpx;
 }
 
 .goods .foods-wrapper .food-list .food-item .content .price .old {
@@ -154,8 +159,8 @@ page {
 
 .goods .foods-wrapper .food-list .food-item .content .cartControl-wrapper {
   position: absolute;
-  right: 0;
-  bottom: 12px;
+  right: -8px;
+  bottom: 10px;
 }
 
 /* cartControl 样式 */

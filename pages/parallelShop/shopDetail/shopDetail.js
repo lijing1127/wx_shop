@@ -22,7 +22,7 @@ Page({
               {
                 "name": "阿拉伯糖（体验装）",
                 "price": 96.0,
-                "match": 96.0,
+                "match": 96000.0,
                 "Count": 0,
                 "image": "../../../images/L-alabo.png",
                 "productId": 111,
