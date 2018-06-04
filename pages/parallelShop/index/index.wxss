@@ -39,6 +39,9 @@
   background: transparent;
   font-size: 28rpx;
 }
+swiper{
+  height: 350rpx;
+}
 
 /* 轮播图 */
 .slide-image{
