@@ -41,7 +41,7 @@ Page({
           method: 'GET',
           header: {
             'content-type': 'application/json', // 默认值
-            "Access-Authorization": res.data
+            "Access-Token": res.data
           },
           success: function (res) {
             console.log(res.data, 'success')
