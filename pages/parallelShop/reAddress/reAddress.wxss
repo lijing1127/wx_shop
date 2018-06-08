@@ -51,3 +51,48 @@
   background: #ad0e11;
   color: #fff;
 }
+
+.showNew {
+  width:80%;
+  padding:20rpx 0 30rpx 0;
+  position: fixed;
+  top:200rpx;
+  left: 10%;
+  background: #fff;
+  border: 1px solid #ad0e11;
+  border-radius: 20rpx;
+  box-shadow: 10px 10px 5px #ddd;
+}
+
+.newAddr {
+  display: block;
+  width:90%;
+  margin-left: 5%;
+}
+
+.newAddr .section {
+  margin-bottom: 15rpx;
+}
+
+.newAddr .section .section__title {
+  color: #ad0e11;
+}
+
+.newAddr .section input {
+  border-bottom: 1px dashed #666;
+}
+
+.newAddr .btns {
+  display: flex;
+  
+}
+
+.newAddr .btns .hideNew {
+  color: #666;
+  font-size: 36rpx;
+}
+
+.newAddr .btns .newAddrBtn {
+  color: #ad0e11;
+  font-size: 36rpx;
+}

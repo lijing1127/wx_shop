@@ -4,15 +4,38 @@
   <radio-group class="radio-group" name="radio-addr">
     <label class="radio" wx:for="{{items}}">
       <radio value="{{item.id}}" checked="{{item.checked}}" />
-      <text class='infoName'>{{item.name}}</text><text class='infoPhone'>{{item.phone}}</text>
+      <text class='infoName'>{{item.name}}</text>
+      <text class='infoPhone'>{{item.phone}}</text>
       <view class='infoBottom'>{{item.address}}</view>
     </label>
   </radio-group>
 
   <!-- 底部按钮 -->
   <view class='bottomBtn'>
-    <button plain='true'>添加地址</button>
+    <button plain='true' bindtap='addAddress'>添加地址</button>
     <button plain='true' class='editBtn' formType="submit">确认修改</button>
   </view>
 
 </form>
+
+<!-- 添加地址弹出框 -->
+<view class='showNew' wx:if="{{isShow}}">
+  <form bindsubmit="formSubmit" bindreset="formReset" class='newAddr'>
+    <view class="section">
+      <view class="section__title">收件人：</view>
+      <input name="recipient" />
+    </view>
+    <view class="section">
+      <view class="section__title">联系电话：</view>
+      <input name="phone" type='number' />
+    </view>
+    <view class="section">
+      <view class="section__title">收货地址：</view>
+      <input name="goodsAddress" />
+    </view>
+    <view class='btns'>
+      <button class='hideNew' bindtap='hideNew'>取消</button>
+      <button formType="submit" class='newAddrBtn'>新建地址</button>
+    </view>
+  </form>
+</view>
