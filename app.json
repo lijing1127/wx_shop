@@ -1,22 +1,22 @@
 {
   "pages": [
+    "pages/register/register",
+    "pages/healthy/pressure/pressure",
+    "pages/healthy/index/index",
     
+    "pages/parallelShop/shopDetail/shopDetail",
     "pages/parallelShop/index/index",
+    "pages/parallelShop/receiveDetail/receiveDetail",
+    "pages/index/index",
     "pages/parallelShop/warehouseMana/warehouseMana",
     "pages/parallelShop/stockOrder/stockOrder",
-    "pages/healthy/index/index",
-    "pages/healthy/pressure/pressure",
+    "pages/parallelShop/waitReceive/waitReceive",
+    "pages/parallelShop/shopEdition/shopEdition",
+    "pages/parallelShop/generate/generate",
     "pages/healthy/preHistory/preHistory",
     "pages/healthy/sugar/sugar",
     "pages/healthy/weight/weight",
     "pages/user/index/index",
-    "pages/parallelShop/shopDetail/shopDetail",
-    "pages/parallelShop/waitReceive/waitReceive",
-    "pages/parallelShop/receiveDetail/receiveDetail",
-    "pages/parallelShop/shopEdition/shopEdition",
-    "pages/parallelShop/generate/generate",
-    "pages/register/register",
-    "pages/index/index",
     "pages/login/login"
   ],
   "window": {
