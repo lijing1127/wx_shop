@@ -1,4 +1,30 @@
-
+var app = getApp();
+var classifyList = function (that) {
+  app.clientFetch(app.globalData.hostUrl + '/contents_categories',
+    'GET',
+    function (res) {
+      var res_obj;
+      var datas = res.data.data;
+      for (var i = 0; i < datas.length; i++) {
+        var second = datas[i].second_category.data;
+        for (var j = 0; j < second.length; j++) {
+          var product = second[j].product.data;  
+          for (var k = 0; k < product.length; k++) {
+            var currArr = [];
+            res_obj = Object.assign(product[k], { Count: 0 });
+            currArr.push(res_obj)
+          }
+        } 
+      }
+      that.setData({
+        classify: datas,
+      });
+    },
+    function (res) {
+      console.log(res.data, 'fail')
+    }
+  )
+}
 Page({
   /** * 页面的初始数据 */
   data: {
@@ -9,94 +35,7 @@ Page({
     // backgroundColor: '#d9d9d9',
     // showText: "请选择",
     go: false,
-    classify: [
-      {
-        "name": "特医食品",
-        "firstId": 1,
-        "type": -1,
-        "secClass": [
-          {
-            "name": "teyide teyi",
-            "secondId": 11,
-            "product": [
-              {
-                "name": "阿拉伯糖（体验装）",
-                "price": 96.0,
-                "match": 96.0,
-                "Count": 0,
-                "image": "../../../images/L-alabo.png",
-                "productId": 111,
-              },
-              {
-                "name": "阿拉伯糖（体验装）",
-                "price": 96.0,
-                "match": 96.0,
-                "Count": 0,
-                "image": "../../../images/L-alabo.png",
-                "productId": 112,
-              }
-            ]
-          },
-          {
-            "name": "teyide teyi2",
-            "secondId": 12,
-            "product": [
-              {
-                "name": "阿拉伯糖（体验装）",
-                "price": 96.0,
-                "match": 96.0,
-                "Count": 0,
-                "image": "../../../images/L-alabo.png",
-                "productId": 121,
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "特医食品123",
-        "firstId": 1,
-        "type": -1,
-        "secClass": [
-          {
-            "name": "teyide teyi",
-            "secondId": 11,
-            "product": [
-              {
-                "name": "阿拉伯糖（体验装）",
-                "price": 96.0,
-                "match": 96.0,
-                "Count": 0,
-                "image": "../../../images/L-alabo.png",
-                "productId": 111,
-              },
-              {
-                "name": "阿拉伯糖（体验装）",
-                "price": 96.0,
-                "match": 96.0,
-                "Count": 0,
-                "image": "../../../images/L-alabo.png",
-                "productId": 112,
-              }
-            ]
-          },
-          {
-            "name": "teyide teyi2",
-            "secondId": 12,
-            "product": [
-              {
-                "name": "阿拉伯糖（体验装）",
-                "price": 96.0,
-                "match": 96.0,
-                "Count": 0,
-                "image": "../../../images/L-alabo.png",
-                "productId": 121,
-              }
-            ]
-          }
-        ]
-      },
-    ],
+    classify: [],
     toView: '0',
     scrollTop: 100,
     foodCounts: 0,
@@ -112,6 +51,26 @@ Page({
     status: 0,
     url: "",
     showPopup: false,
+    Count: 0,
+  },
+  scanCode: function () {
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
+  },
+  onLoad: function (options) {
+    var that = this;
+    classifyList(that)
+    this.setData({
+      payDesc: this.receiveDetail()
+    });
   },
   selectMenu: function (e) {
     var index = e.currentTarget.dataset.itemIndex;
@@ -125,16 +84,15 @@ Page({
     var index = e.currentTarget.dataset.itemIndex;
     var firstIndex = e.currentTarget.dataset.firstindex;
     var secondIndex = e.currentTarget.dataset.secondindex;
-    this.data.classify[firstIndex].secClass[secondIndex].product[index].Count--;
+    this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].Count--;
     var mark = 'a' + index + 'b' + firstIndex + 'c' + secondIndex;
-    var price = this.data.classify[firstIndex].secClass[secondIndex].product[index].price;
-    var match = this.data.classify[firstIndex].secClass[secondIndex].product[index].match;
-    var num = this.data.classify[firstIndex].secClass[secondIndex].product[index].Count;
-    var name = this.data.classify[firstIndex].secClass[secondIndex].product[index].name; 
-    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, firstIndex: firstIndex, secondIndex: secondIndex};
+    var price = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].now_product_price;
+    var match = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].match;
+    var num = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].Count;
+    var name = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].name;
+    var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, firstIndex: firstIndex, secondIndex: secondIndex };
     var carArray1 = this.data.carArray.filter(item => item.mark != mark);
     carArray1.push(obj);
-    // console.log(carArray1);
     for (var m = 0; m < carArray1.length; m++) {
       if (carArray1[m].num == 0) {
         carArray1.splice(m, 1);  // splice(a,b); a需要删除的位置,b删除几个  
@@ -155,7 +113,6 @@ Page({
         count1++;
       }
     }
-    //console.log(count1)  
     if (count1 == carArray1.length) {
       if (num == 0) {
         this.setData({
@@ -165,7 +122,6 @@ Page({
     }
   },
   decreaseShopCart: function (e) {
-    console.log('1');
     this.decreaseCart(e);
   },
   //添加到购物车  
@@ -173,14 +129,12 @@ Page({
     var index = e.currentTarget.dataset.itemIndex;
     var firstIndex = e.currentTarget.dataset.firstindex;
     var secondIndex = e.currentTarget.dataset.secondindex;
-    this.data.classify[firstIndex].secClass[secondIndex].product[index].Count++;
+    this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].Count++;
     var mark = 'a' + index + 'b' + firstIndex + 'c' + secondIndex;
-    console.log(mark);
-    var price = this.data.classify[firstIndex].secClass[secondIndex].product[index].price;
-    var match = this.data.classify[firstIndex].secClass[secondIndex].product[index].match;
-    var num = this.data.classify[firstIndex].secClass[secondIndex].product[index].Count;
-    var name = this.data.classify[firstIndex].secClass[secondIndex].product[index].name;
-    console.log(name)
+    var price = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].now_product_price;
+    var match = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].match;
+    var num = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].Count;
+    var name = this.data.classify[firstIndex].second_category.data[secondIndex].product.data[index].name;
     var obj = { price: price, match: match, num: num, mark: mark, name: name, index: index, firstIndex: firstIndex, secondIndex: secondIndex };
     var carArray1 = this.data.carArray.filter(item => item.mark != mark)
     carArray1.push(obj);
@@ -214,18 +168,6 @@ Page({
       payDesc: this.payDesc()
     });
   },
-  //差几元起送  
-  payDesc() {
-    if (this.data.totalPrice === 0 && this.data.totalMatch === 0) {
-      // return `￥${this.data.minPrice}元起送`;
-      return '请选择';
-    } else if (this.data.totalPrice < this.data.minPrice) {
-      let diff = this.data.minPrice - this.data.totalPrice;
-      return '还差' + diff + '元起送';
-    } else {
-      return '去结算';
-    }
-  },
 
   //购物车  
   toggleList: function () {
@@ -235,12 +177,10 @@ Page({
     this.setData({
       fold: !this.data.fold,
     })
-    var fold = this.data.fold
-    //console.log(this.data.fold);  
+    var fold = this.data.fold;
     this.cartShow(fold)
   },
   cartShow: function (fold) {
-    // console.log(fold);
     if (fold == false) {
       this.setData({
         cartShow: 'block',
@@ -250,7 +190,6 @@ Page({
         cartShow: 'none',
       })
     }
-    // console.log(this.data.cartShow);
   },
 
   tabChange: function (e) {
@@ -260,18 +199,31 @@ Page({
     });
   },
 
-  onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数  
-    this.setData({
-      payDesc: this.payDesc()
-    });
-  },
   //平行领配跳转页面
   receiveDetail: function () {
-    if (this.go) {
+    if (this.data.totalPrice !== 0 || this.data.totalMatch !== 0) {
+      this.setData({
+        payDesc: "去结算",
+      })
       wx.navigateTo({
         url: '../receiveDetail/receiveDetail',
       })
+    } else {
+      this.setData({
+        payDesc: "请选择",
+      })
+    }
+  },
+  //差几元起送
+  payDesc() {
+    if (this.data.totalPrice === 0 && this.data.totalMatch === 0) {
+      // return `￥${this.data.minPrice}元起送`;
+      return '请选择';
+    } else if (this.data.totalPrice < this.data.minPrice) {
+      let diff = this.data.minPrice - this.data.totalPrice;
+      return '还差' + diff + '元起送';
+    } else {
+      return '去结算';
     }
   }
 })

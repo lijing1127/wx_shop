@@ -14,7 +14,14 @@
     </view>
   </view>
   <!-- 领配产品 -->
-  <view class="weuiTitle">配领产品</view>
+  <view class='scanTitle'>
+    <view class="weuiTitle">配领产品</view>
+    <view class="scanRight" bindtap='scanCode'>
+      <image class='scancode' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGWSURBVFhH7ZdNTgMxDIXnChykm5lLwQ7uACcDjsEVuu8K/CLbepM4TipayqKfZMX2c36cGfVnufOv2LbtTewk9n0lO63r+qrbtaDgcDg8aHhxsDb20LAFp1T3aqR7sChX9YmYTXIf0MQ/au6otV8w9bvzAGJ1W1iMCi1Xj8woF+lOVCgjui2dVrldl8gFNbscYL8hKsQiMM4Znfp0HvsNo0LL0fMuIzAtmwci3WFRFn9HzIacaryxPY7SbTYPIFa3JRU7nDtn+gDokjtlpI5fwtJ5DeZGNYjVbemJWIAXiurqGobro7lOVfgIU7/k65GZ0UCkO1XhC0x9vvKR8XX7PE3NHyAjqstyrKV7sMgvob1QFovfvITwA21XAxCr25KKHWxOPfaYPoB0O/pW2z1f8ysrndvNAeTVbWExKoz03gjM/9UBZESnu+cMNO9d1jFArK4T5RwWzceCMM7Ngnq19FAOi1Gh5exKZXwSe+7lrH60rsOiLDL8NsRmki8fVlFOxqnH4qTihRgd4OY/y2/7x+TO37MsPx081aR6K7oCAAAAAElFTkSuQmCC"/>
+      <text class='scanText'>扫一扫</text>
+    </view>
+  </view>
+  
   <view class="goods" wx:if="{{status==0||item.status==status}}">
     <!--一级分类目录  -->
     <view class="menu-wrapper">
@@ -30,17 +37,17 @@
     <scroll-view scroll-y="true" scroll-into-view="{{toView}}" class="foods-wrapper">
       <view wx:for="{{classify}}" class="food-list food-list-hook" wx:for-index="firstIndex" wx:key="key">
         <view id="order{{firstIndex}}" class="title adee">{{item.name}}</view>
-        <view wx:for="{{item.secClass}}" wx:for-index="secondIndex" wx:key="key">
+        <view wx:for="{{item.second_category.data}}" wx:for-index="secondIndex" wx:key="key">
           <view class="title gray">{{item.name}}</view>
-          <view wx:for="{{item.product}}" class="food-item" wx:for-item="product" data-food="{{product}}" wx:key="key">
+          <view wx:for="{{item.product.data}}" class="food-item" wx:for-item="product" data-food="{{product}}" wx:key="key">
             <view class="icon">
-              <image src="{{product.image}}" style="width: 57px;height: 57px" data-id="{{product.image}}"></image>
+              <image src="{{product.image}}" style="width: 57px;height: 57px" data-id="{{product.image.url}}"></image>
             </view>
             <view class="content">
               <view class="name">{{product.name}}</view>
               <view class="price">
-                <view class="now">￥{{product.price}}</view>
-                <view class="now">配领值 {{product.match}}</view>
+                <view class="fontS now">￥{{product.now_product_price}}</view>
+                <view class="fontS smallNow">配领值 {{product.match}}</view>
               </view>
               <!--点击加号按钮的滑动-->
               <view class="cartControl-wrapper">
@@ -78,7 +85,7 @@
               </view>
             </view>
             <!--确认订单按钮  -->
-            <view class="content-right" catchtap="pay">
+            <view class="content-right" catchtap="receiveDetail">
               <view class="pay enough" :class="payClass">
                 {{payDesc}}
               </view>
@@ -94,11 +101,11 @@
               <scroll-view scroll-y style="height: 200px;">
                 <view class="shopcart-food" wx:for="{{carArray}}" wx:key="key">
                   <text class="name">{{item.name}}</text>
-                  <view class="price" wx:if="{{item.num > 0}}">
+                  <!-- <view class="price" wx:if="{{item.num > 0}}">
                     <span>￥{{item.price*item.num}}</span>
                     <span>　</span>
                     <span>配领值：{{item.match*item.num}}</span>
-                  </view>
+                  </view> -->
 
                   <!--购物车列表里 加减号操作-->
                   <view class="cartControl-wrapper" style="bottom:10px;" wx:if="{{item.num > 0}}">
@@ -124,7 +131,7 @@
       <view class="list-mask" wx:if="{{listShow}}" bindtap="hideList"></view>
     </view>
   </view>
-
+<!-- 
   <view class="zan-popup {{ showPopup ? 'zan-popup--show' : ''}}">
     <view class="zan-popup__mask" bindtap="togglePopup"></view>
     <view class="zan-popup__container popup-example--center">
@@ -132,5 +139,5 @@
         <image src='{{url}}'></image>
       </view>
     </view>
-  </view>
+  </view> -->
 </view>
