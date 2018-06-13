@@ -21,9 +21,9 @@ App({
               wx.getUserInfo({
                 success: res => {
                   // 可以将 res 发送给后台解码出 unionId
-                  console.log(res.encryptedData);
-                  console.log(res.iv);
-                  console.log(code);
+                  // console.log(res.encryptedData);
+                  // console.log(res.iv);
+                  // console.log(code);
                   // wx.request({
                   //   url: 'http://192.168.1.235:3000/user/get_session_info',
                   //   data: {
@@ -60,6 +60,24 @@ App({
     userInfo: null,
     has_parallel_shop: true,
     token: null,
-    id: null
-  }
+    hostUrl: 'http://192.168.1.237:5001/api/v1',
+  },
+  //全局封装requestAPI
+  clientFetch: function (url, method, resolve, reject) {
+    wx.request({
+      url: url,
+      method: method,
+      header: {
+        'content-type': 'application/json',
+        'access_token': this.globalData.token ? this.globalData.token : null,
+      },
+      success: function (res) {
+        resolve(res);
+      },
+      fail: function (res) {
+        reject(res);
+      }
+    })
+  },
 })
+

@@ -3,10 +3,10 @@ var app = getApp();
 Page({
   data: {
     mobile:'',
-    disable:true
+    disable:true,
   },
   onLoad: function (options) {
-
+    
   },
   blur_mobile: function (e) {
     var val= e.detail.value;
@@ -46,14 +46,10 @@ Page({
       })
       return false;
     } 
-    wx.request({
-      url: 'http://192.168.1.237:8000/api/v1/users/verify_code?telphone=' + mobile,
-      method: 'POST',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {   
-        if(res.data.status == 400){
+    app.clientFetch(app.globalData.hostUrl + '/users/verify_code?telphone=' + mobile,
+      'POST',
+      function (res) {
+        if (res.data.status == 400) {
           wx.showModal({
             title: '',
             content: '请输入真实有效号码',
@@ -61,13 +57,13 @@ Page({
             confirmText: '确定'
           })
         }else{
-          console.log(res.data, 'success')
+          console.log('success')
         }
       },
-      fail: function (res) {
+      function (res) {
         console.log(res.data, 'fail')
       }
-    })
+    )
     return true;
   },
 
@@ -83,40 +79,28 @@ Page({
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var phone = e.detail.value.phone;
     var vCode = e.detail.value.vCode;
-    if (phone == "" || vCode == "" || phone.length != 11 || vCode.length!=4){
+    if (phone == "" || vCode == "" || phone.length != 11 || vCode.length != 4) {
       console.log('')
-    }else{
-      // var url = 'http://192.168.1.237:8000/api/v1/users/verify?telphone='+phone+'&verify_code='+vCode;
-      // app.httpClient.postApi(url)
-      // .then(res => {
-      //   console.log(res.data,'succ')
-      // })
-      // .catch(res => {
-      //   console.log(res.data,'fail')
-      // })
-      wx.request({
-        url: 'http://192.168.1.237:8000/api/v1/users/verify?telphone='+phone+'&verify_code='+vCode,
-        method: 'POST',
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
-        success: function (res) {
+    } else {
+      app.clientFetch(app.globalData.hostUrl+'/users/verify?telphone='+phone+'&verify_code='+vCode,
+        'POST',
+        function (res) {
           var token = res.data.authentication_token;
           app.globalData.token = token;
           wx.setStorage({
             key: "token",
             data: app.globalData.token
           })
-          if (app.globalData.token){
+          if (app.globalData.token) {
             wx.switchTab({
               url: '../parallelShop/index/index',
             })
           }
         },
-        fail: function (res) {
-          console.log(res.data, 'fail')
+        function (res) {
+          console.log(res)
         }
-      })
+      )
     }
-  },
+  }
 })

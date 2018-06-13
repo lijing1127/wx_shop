@@ -6,7 +6,31 @@ page {
 .containView {
   height: 100%;
   overflow: hidden;
-  /* padding-bottom: 100rpx; */
+}
+
+.scanTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scanTitle .scancode {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 50px;
+  text-align: right;
+}
+
+.scanTitle .scanRight {
+  height: 50px;
+  margin-right: 20rpx;
+}
+
+.scanTitle .scanRight .scanText {
+  font-size: 14px;
+  text-align: right;
+  position: relative;
+  top: -10rpx;
 }
 
 .weuiTitle {
@@ -21,7 +45,6 @@ page {
 }
 
 .goods {
-  
   display: flex;
   position: absolute;
   width: 100%;
@@ -88,10 +111,12 @@ page {
   font-size: 12px;
   background: #f3f5f7;
 }
-.adee{
+
+.adee {
   color: #ad0e11;
 }
-.gray{
+
+.gray {
   color: rgb(147, 153, 159);
 }
 
@@ -140,10 +165,17 @@ page {
   margin-right: 12px;
 }
 
-.goods .foods-wrapper .food-list .food-item .content .price .now {
+.goods .foods-wrapper .food-list .food-item .content .price .fontS {
   margin-right: 8px;
-  font-size: 14px;
   color: rgb(240, 20, 20);
+}
+
+.now {
+  font-size: 14px;
+}
+
+.smallNow {
+  font-size: 22rpx;
 }
 
 .goods .foods-wrapper .food-list .food-item .content .price .old {
@@ -154,8 +186,8 @@ page {
 
 .goods .foods-wrapper .food-list .food-item .content .cartControl-wrapper {
   position: absolute;
-  right: 0;
-  bottom: 12px;
+  right: -8px;
+  bottom: 10px;
 }
 
 /* cartControl 样式 */
